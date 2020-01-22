@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Quest Test"
+run/main_scene="res://scenes/main.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://icon.png"
+
+[autoload]
+
+global="*res://scripts_gd/global.gd"
+
+[display]
+
+window/vsync/use_vsync=false
+
+[gdnative]
+
+singletons=[ "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
+singletons_disabled=[  ]
+
+[physics]
+
+common/physics_fps=72
+common/physics_jitter_fix=0.0
+3d/physics_engine="Bullet"
+common/enable_object_picking=false
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+threads/thread_model=2
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://envs/default_env.tres"
