@@ -31,6 +31,7 @@ var collides
 var grabbed = false
 var isGrabbable
 var grabbedObject = null
+var grabbedObjectOrigin
 
 # var velStartTransformOrigin
 # var velEndTransformOrigin
@@ -52,27 +53,16 @@ func _physics_process(delta):
 	if triggerDown && grabDown && !grabbed:
 		grabRigidGrabbable()
 		pullRigidGrabbable()
+	if grabbedObject && grabbed:
+		grabbedObjectOrigin = grabbedObject.global_transform.origin
+		if ( sqrt( pow(grabbedObjectOrigin.x-global_transform.origin.x,2)+pow(grabbedObjectOrigin.y-global_transform.origin.y,2)+pow(grabbedObjectOrigin.z-global_transform.origin.z,2) ) > .2 ):
+			handGrab.set_node_b('')
+			grabbedObject = null
 	if grabbedObject && !grabbed:
 		handGrab.set_node_b("")
 		grabbedObject = null
 	if triggerDown:
-		if rayCollidedNodeMesh && handRay.is_colliding():
-			if rayCollidedNodeMesh != get_node(handRay.get_collider().get_path()).find_node('MeshInstance',true,true):
-				rayCollidedNodeMesh.set_surface_material(0, null)
-				rayCollidedNodeMesh = null
-				tmpMat = null
-		elif rayCollidedNodeMesh && handRay.is_colliding() == false:
-			rayCollidedNodeMesh.set_surface_material(0, null)
-			rayCollidedNodeMesh = null
-			tmpMat = null
-		if handRay.is_colliding() && !rayCollidedNode && handRay.get_collider().get_class() == "RigidBody" && checkNodeGroups(handRay.get_collider(), 'grabbable'):
-			rayCollidedNodeMesh = get_node(handRay.get_collider().get_path()).find_node('MeshInstance',true,true)
-			if rayCollidedNodeMesh:
-				if rayCollidedNodeMesh.get_surface_material(0) == null:
-					rayCollidedNodeMesh.set_surface_material(0, grabShader)
-				elif rayCollidedNodeMesh.get_surface_material(0).get_class() == "SpatialMaterial":
-					tmpMat = rayCollidedNodeMesh.get_surface_material(0)
-					rayCollidedNodeMesh.get_surface_material(0).flags_no_depth_test = true
+		applyGrabShader()
 			
 func _on_leftHand_button_pressed(button):
 	if button == 2:
@@ -141,13 +131,23 @@ func grabRigidGrabbable():
 						rayCollidedNode = null
 						damptmp = null
 						gravtmp = null
-						
+					if rayCollidedNodeMesh:
+						rayCollidedNodeMesh.set_surface_material(0, tmpMat)
+						rayCollidedNodeMesh = null
+						tmpMat = null
 					rayOn = false
 				break
 
 func pullRigidGrabbable():
 	if handRay.is_colliding() && !rayCollidedNode && handRay.get_collider().get_class() == "RigidBody" && checkNodeGroups(handRay.get_collider(), 'grabbable'):
 		rayCollidedNode = get_node(handRay.get_collider().get_path())
+		rayCollidedNodeMesh = rayCollidedNode.find_node('MeshInstance',true,true)
+		if rayCollidedNodeMesh:
+			if rayCollidedNodeMesh.get_surface_material(0) == null:
+				rayCollidedNodeMesh.set_surface_material(0, grabShader)
+			elif rayCollidedNodeMesh.get_surface_material(0).get_class() == "SpatialMaterial":
+				tmpMat = rayCollidedNodeMesh.get_surface_material(0)
+				rayCollidedNodeMesh.get_surface_material(0).flags_no_depth_test = true
 		pullInterval = 0
 	if grabDown && rayCollidedNode:
 		if pullInterval < 72:
@@ -177,7 +177,7 @@ func pullRigidGrabbable():
 			forceScaleFactor = abs(forceStrength/towardVector[2])
 		towardVector = towardVector*forceScaleFactor
 		rayCollidedNode.add_force( towardVector, Vector3(0,0,0))
-				
+
 
 func findNode(nodeName):
 	return get_node('/root').find_node(nodeName, true, false)
@@ -193,3 +193,49 @@ func checkNodeNameGroups(nodeName, groupName):
 			return true
 	return false
 
+
+func applyGrabShader():
+	if rayCollidedNodeMesh && handRay.is_colliding():
+		if rayCollidedNodeMesh != get_node(handRay.get_collider().get_path()).find_node('MeshInstance',true,true):
+			rayCollidedNodeMesh.set_surface_material(0, null)
+			rayCollidedNodeMesh = null
+			tmpMat = null
+	elif rayCollidedNodeMesh && handRay.is_colliding() == false:
+		rayCollidedNodeMesh.set_surface_material(0, null)
+		rayCollidedNodeMesh = null
+		tmpMat = null
+	if handRay.is_colliding() && !rayCollidedNode && handRay.get_collider().get_class() == "RigidBody" && checkNodeGroups(handRay.get_collider(), 'grabbable'):
+		rayCollidedNodeMesh = get_node(handRay.get_collider().get_path()).find_node('MeshInstance',true,true)
+		if rayCollidedNodeMesh:
+			if rayCollidedNodeMesh.get_surface_material(0) == null:
+				rayCollidedNodeMesh.set_surface_material(0, grabShader)
+			elif rayCollidedNodeMesh.get_surface_material(0).get_class() == "SpatialMaterial":
+				tmpMat = rayCollidedNodeMesh.get_surface_material(0)
+				rayCollidedNodeMesh.get_surface_material(0).flags_no_depth_test = true
+
+
+#		pullBackup:
+#if handRay.is_colliding() && grabDown:
+# if handRay.get_collider().get_class() == "RigidBody":
+# 	rayCollidedNode = get_node(handRay.get_collider().get_path())
+# 	if !rayCollidedtmp || !gravtmp:
+# 		rayCollidedtmp = rayCollidedNode
+# 		gravtmp = rayCollidedtmp.get_gravity_scale()
+# 	if rayCollidedNode != rayCollidedtmp:
+# 		rayCollidedtmp.set_gravity_scale(gravtmp)
+# 		rayCollidedtmp = rayCollidedNode
+# 		gravtmp = rayCollidedtmp.get_gravity_scale()
+# 	if checkNodeGroups(rayCollidedNode,'grabbable'):
+# 		forceStrength = rayCollidedNode.get_mass()*50
+# 		rayCollidedNode.set_gravity_scale(0)
+# 		rayCollidedNodeOrigin = rayCollidedNode.get_global_transform().origin
+# 		handOrigin = get_global_transform().origin
+# 		towardVector = handOrigin-rayCollidedNodeOrigin
+# 		if abs(towardVector[0]) > abs(towardVector[1]) && abs(towardVector[0]) > abs(towardVector[2]):
+# 			forceScaleFactor = abs(forceStrength/towardVector[0])
+# 		elif abs(towardVector[1]) > abs(towardVector[0]) && abs(towardVector[1]) > abs(towardVector[2]):
+# 			forceScaleFactor = abs(forceStrength/towardVector[1])
+# 		elif abs(towardVector[2]) > abs(towardVector[1]) && abs(towardVector[2]) > abs(towardVector[0]):
+# 			forceScaleFactor = abs(forceStrength/towardVector[2])
+# 		towardVector = towardVector*forceScaleFactor
+# 		rayCollidedNode.add_force( towardVector, Vector3(0,0,0))

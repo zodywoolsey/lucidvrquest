@@ -15,19 +15,19 @@ var tileMoveFlag = true
 func _ready():
 	floorTileScene = load("res://scenes/floorTile.tscn")
 
-	for i in range(2):
-		tmpTile = floorTileScene.instance()
-		add_child(tmpTile)
-		tmpTile.translate(Vector3(-.5+i,0,0))
-		floorTiles.append(tmpTile)
+	# for i in range(2):
+	# 	tmpTile = floorTileScene.instance()
+	# 	add_child(tmpTile)
+	# 	tmpTile.translate(Vector3(-.5+i,0,0))
+	# 	floorTiles.append(tmpTile)
 
-	for i in range(100):
+	for i in range(10):
 		if i == 0:
 			i = 1
-		for a in range(2):
+		for a in range(10):
 			tmpTile = floorTileScene.instance()
 			add_child(tmpTile)
-			tmpTile.translate(Vector3(((a)-.5), -200+i, -i))
+			tmpTile.translate(Vector3(((a)-4), -200+i, -i+5))
 			floorTiles.append(tmpTile)
 
 
