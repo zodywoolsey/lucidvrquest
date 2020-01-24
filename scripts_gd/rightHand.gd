@@ -72,7 +72,6 @@ func _on_rightHand_button_pressed(button):
 		rayOn = true
 		handRay.set_enabled(true)
 		handRay.show()
-	print(button)
 
 func _on_rightHand_button_release(button):
 	if button == 2:
