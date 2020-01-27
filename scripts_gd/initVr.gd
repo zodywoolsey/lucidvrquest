@@ -13,6 +13,8 @@ var interface = null
 
 func _ready():
 	settingsFile = File.new()
+	if not settingsFile.file_exists('res://settings.txt'):
+		settingsFile.open('res://settings.txt', File.WRITE)
 	if settingsFile.open("res://settings.txt",File.READ) != 0:
 		print('Error, will crash')
 	var settingsData = {}
