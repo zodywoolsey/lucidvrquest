@@ -17,7 +17,7 @@ func _ready():
 		settingsFile.open('res://settings.txt', File.WRITE)
 	if settingsFile.open("res://settings.txt",File.READ) != 0:
 		print('Error, will crash')
-	var settingsData = {}
+	var settingsData = ''
 	settingsData = settingsFile.get_line()
 	print(settingsData)
 	if settingsData == 'ovr':
