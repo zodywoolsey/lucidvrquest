@@ -8,3 +8,6 @@
 *.TMP
 logs
 Thumbs.db
+android/
+mac/
+windows/
