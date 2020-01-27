@@ -24,11 +24,11 @@ func _ready():
 	# 	tmpTile.translate(Vector3(-.5+i,0,0))
 	# 	floorTiles.append(tmpTile)
 
-	for i in range(50):
-		for a in range(50):
+	for i in range(20):
+		for a in range(20):
 			tmpTile = floorTileScene.instance()
 			#tmpTile.translate(Vector3(((a)-4), -200+i, -i+5))
-			tmpTile.global_transform.origin = Vector3(((a)-25), -100+i+a, -i+25)
+			tmpTile.global_transform.origin = Vector3(((a)-10), -500+((i+a)*10), -i+10)
 			add_child(tmpTile)
 			floorTiles.append(tmpTile)
 

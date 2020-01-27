@@ -12,6 +12,8 @@ var settingsFile
 var interface = null
 
 func _ready():
+	interface = ARVRServer.find_interface("OVRMobile")
+	arServ = 'ovrMobile'
 	settingsFile = File.new()
 	if not settingsFile.file_exists('res://settings.txt'):
 		settingsFile.open('res://settings.txt', File.WRITE)
@@ -28,9 +30,6 @@ func _ready():
 		interface = ARVRServer.find_interface('Oculus')
 		arServ = 'oculus'
 		Engine.iterations_per_second = 80
-	elif settingsData == 'quest':
-		interface = ARVRServer.find_interface("OVRMobile")
-		arServ = 'ovrMobile'
 	if interface:
 		if arServ == 'ovrMobile':
 			ovr_init_config = preload('res://addons/godot_ovrmobile/OvrInitConfig.gdns').new()
