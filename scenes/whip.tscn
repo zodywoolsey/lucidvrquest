@@ -43,7 +43,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink1" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink1"]
@@ -67,7 +66,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink2" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink2"]
@@ -91,7 +89,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink3" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink3"]
@@ -115,7 +112,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink4" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink4"]
@@ -139,7 +135,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink5" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink5"]
@@ -163,7 +158,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink6" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink6"]
@@ -190,7 +184,6 @@ __meta__ = {
 [node name="whipLink7" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink7"]
@@ -214,7 +207,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink8" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink8"]
@@ -238,7 +230,6 @@ angular_limit_z/lower_angle = -15.0
 [node name="whipLink9" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99, 0 )
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink9"]
@@ -261,8 +252,8 @@ angular_limit_z/lower_angle = -15.0
 
 [node name="whipLink10" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0 )
+mass = 4.0
 continuous_cd = true
-sleeping = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="whipLink10"]

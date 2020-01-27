@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Quest Test"
-run/main_scene="res://scenes/main.tscn"
+config/name="dungeonGame"
+run/main_scene="res://scenes/vrMain.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
@@ -31,12 +31,12 @@ window/vsync/use_vsync=false
 
 [gdnative]
 
-singletons=[ "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
 singletons_disabled=[  ]
+singletons=[ "res://addons/godot-oculus/godot_oculus.gdnlib", "res://addons/godot-openvr/godot_openvr.gdnlib", "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
 
 [physics]
 
-common/physics_fps=72
+common/physics_fps=10
 common/physics_jitter_fix=0.0
 3d/physics_engine="Bullet"
 common/enable_object_picking=false
