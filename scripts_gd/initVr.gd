@@ -32,8 +32,8 @@ func _ready():
 		Engine.iterations_per_second = 80
 	if interface:
 		if arServ == 'ovrMobile':
-			ovr_init_config = preload('res://addons/godot_ovrmobile/OvrInitConfig.gdns').new()
-			ovr_performance = preload('res://addons/godot_ovrmobile/OvrPerformance.gdns').new()
+			ovr_init_config = load('res://addons/godot_ovrmobile/OvrInitConfig.gdns').new()
+			ovr_performance = load('res://addons/godot_ovrmobile/OvrPerformance.gdns').new()
 			ovr_init_config.set_render_target_size_multiplier(1)
 			ovr_performance.set_clock_levels(1, 1)
 			ovr_performance.set_extra_latency_mode(1)
