@@ -29,7 +29,3 @@ shape = SubResource( 1 )
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody2/CollisionShape"]
 mesh = SubResource( 2 )
 material/0 = null
-
-[node name="Generic6DOFJoint" type="Generic6DOFJoint" parent="."]
-nodes/node_a = NodePath("../RigidBody")
-nodes/node_b = NodePath("../RigidBody2")
