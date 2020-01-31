@@ -12,7 +12,7 @@ var settingsFile
 var interface = null
 
 func _ready():
-	interface = ARVRServer.find_interface('OpenVR')
+	interface = ARVRServer.find_interface('Oculus')
 	Engine.iterations_per_second = 80
 	if interface:
 		if interface.initialize():
