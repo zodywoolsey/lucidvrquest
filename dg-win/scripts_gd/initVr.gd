@@ -21,7 +21,8 @@ func _ready():
 		print('Error, will crash')
 	var settingsData = ''
 	settingsData = settingsFile.get_line()
-	print(settingsData)
+	if settingsData != 'ovr' && settingsData != 'oculus' && settingsData != 'ovrMobile':
+		settingsData = 'oculus'
 	if settingsData == 'ovr':
 		interface = ARVRServer.find_interface('OpenVR')
 		arServ = 'ovr'
