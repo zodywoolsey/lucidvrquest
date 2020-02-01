@@ -85,6 +85,7 @@ mesh = SubResource( 5 )
 material/0 = SubResource( 7 )
 
 [node name="leftHand" type="ARVRController" parent="."]
+controller_id = 3
 script = ExtResource( 2 )
 
 [node name="leftHandArea" type="Area" parent="leftHand"]
