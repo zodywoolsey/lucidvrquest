@@ -11,3 +11,4 @@ Thumbs.db
 android/
 mac/
 windows/
+*.DS_Store
