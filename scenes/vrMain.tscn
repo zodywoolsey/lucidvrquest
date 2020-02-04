@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://new_shadermaterial.tres" type="Material" id=1]
 [ext_resource path="res://scripts_gd/spawnBox.gd" type="Script" id=2]
-[ext_resource path="res://scenes/menuWorld.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts_gd/initVr.gd" type="Script" id=5]
 [ext_resource path="res://scenes/woodLookingShader.tres" type="Material" id=6]
@@ -96,9 +95,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 shape = SubResource( 3 )
 
-[node name="menuWorld" parent="." instance=ExtResource( 3 )]
-
-[node name="spawnBox" type="Area" parent="."]
+[node name="spawnBox" type="Area" parent="." groups=[
+"spawnBox",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.415208, 1.03305, 0.383337 )
 script = ExtResource( 2 )
 
@@ -109,3 +108,5 @@ shape = SubResource( 4 )
 cast_shadow = 0
 mesh = SubResource( 5 )
 material/0 = ExtResource( 1 )
+[connection signal="body_entered" from="spawnBox" to="spawnBox" method="_on_spawnBox_body_entered"]
+[connection signal="body_exited" from="spawnBox" to="spawnBox" method="_on_spawnBox_body_exited"]

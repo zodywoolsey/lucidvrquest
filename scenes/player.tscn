@@ -127,9 +127,13 @@ mesh = SubResource( 5 )
 material/0 = SubResource( 7 )
 [connection signal="button_pressed" from="rightHand" to="rightHand" method="_on_rightHand_button_pressed"]
 [connection signal="button_release" from="rightHand" to="rightHand" method="_on_rightHand_button_release"]
+[connection signal="area_shape_entered" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_area_shape_entered"]
+[connection signal="area_shape_exited" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_area_shape_exited"]
 [connection signal="body_entered" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_body_entered"]
 [connection signal="body_exited" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_body_exited"]
 [connection signal="button_pressed" from="leftHand" to="leftHand" method="_on_leftHand_button_pressed"]
 [connection signal="button_release" from="leftHand" to="leftHand" method="_on_leftHand_button_release"]
+[connection signal="area_shape_entered" from="leftHand/leftHandArea" to="leftHand" method="_on_leftHandArea_area_shape_entered"]
+[connection signal="area_shape_exited" from="leftHand/leftHandArea" to="leftHand" method="_on_leftHandArea_area_shape_exited"]
 [connection signal="body_entered" from="leftHand/leftHandArea" to="leftHand" method="_on_leftHandArea_body_entered"]
 [connection signal="body_exited" from="leftHand/leftHandArea" to="leftHand" method="_on_leftHandArea_body_exited"]

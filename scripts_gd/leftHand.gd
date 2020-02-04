@@ -34,6 +34,7 @@ var grabbed = false
 var isGrabbable
 var grabbedObject = null
 var grabbedObjectOrigin
+var collidedArea = null
 
 # var velStartTransformOrigin
 # var velEndTransformOrigin
@@ -52,10 +53,10 @@ func _ready():
 
 func _physics_process(delta):
 	if grabDown:
-		grabRigidGrabbable()
+		grab()
 	if triggerDown && grabDown && !grabbed:
-		grabRigidGrabbable()
-		pullRigidGrabbable()
+		grab()
+		pull()
 	if (grabbedObject && grabbed):
 		var isStaticCollided = false
 		collides = handArea.get_overlapping_bodies()
@@ -125,7 +126,13 @@ func _on_leftHandArea_body_entered(body):
 func _on_leftHandArea_body_exited(body):
 	isCollided = false
 
-func grabRigidGrabbable():
+func _on_leftHandArea_area_shape_entered(areaId, area, stupidParam, stupidParam2):
+	collidedArea = area
+
+func _on_leftHandArea_area_shape_exited(areaId, area, stupidParam, stupidParam2):
+	collidedArea = null
+
+func grab():
 	if isCollided && !grabbed:
 		collides = handArea.get_overlapping_bodies()
 		for col in collides:
@@ -148,15 +155,18 @@ func grabRigidGrabbable():
 						gravtmp = null
 					rayOn = false
 				break
+	if collidedArea != null && checkNodeGroups(collidedArea, 'spawnBox') && !grabbed:
+		collidedArea.activate()
+		collidedArea = null
 
-func pullRigidGrabbable():
+func pull():
 	applyGrabShader()
 	if handRay.is_colliding() && !rayCollidedNode && handRay.get_collider().get_class() == "RigidBody" && checkNodeGroups(handRay.get_collider(), 'grabbable'):
 		rayCollidedNode = get_node(handRay.get_collider().get_path())
 		rayCollidedNodeMesh = rayCollidedNode.find_node('MeshInstance',true,true)
 		pullInterval = 0
 	if grabDown && rayCollidedNode:
-		if pullInterval < 72:
+		if pullInterval < Engine.iterations_per_second:
 			pullInterval = pullInterval+1
 		else:
 			pullInterval = 0
