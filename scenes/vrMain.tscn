@@ -47,6 +47,7 @@ material/0 = ExtResource( 6 )
 "grabbable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27938, 0.439738, -0.490929 )
+mass = 50.0
 gravity_scale = 0.2
 continuous_cd = true
 can_sleep = false
@@ -76,11 +77,12 @@ material/0 = null
 "grabbable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445193, 0.370864, -0.490929 )
+mass = 100.0
 gravity_scale = 0.0
 continuous_cd = true
 can_sleep = false
 linear_damp = 0.7
-angular_damp = 0.5
+angular_damp = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody4"]
 shape = SubResource( 1 )
