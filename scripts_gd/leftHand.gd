@@ -19,6 +19,7 @@ var rayCollidedNodeOrigin
 var handOrigin
 var towardVector
 var forceScaleFactor
+var distance
 var forceStrength = 50
 
 var gravtmp = null
@@ -166,11 +167,15 @@ func pull():
 		rayCollidedNodeMesh = rayCollidedNode.find_node('MeshInstance',true,true)
 		pullInterval = 0
 	if grabDown && rayCollidedNode:
-		if pullInterval < Engine.iterations_per_second:
-			pullInterval = pullInterval+1
-		else:
-			pullInterval = 0
+		rayCollidedNodeOrigin = rayCollidedNode.get_global_transform().origin
+		handOrigin = get_global_transform().origin
+		# distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2)+pow(handOrigin.y-rayCollidedNodeOrigin.y, 2) )
+		distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2) )
+		print(distance)
+		if distance < (pullInterval/50)+.4:
 			rayCollidedNode.global_transform = global_transform
+		else:
+			pullInterval += 1
 		if !rayCollidedtmp || !gravtmp || !damptmp:
 			rayCollidedtmp = rayCollidedNode
 			gravtmp = rayCollidedtmp.get_gravity_scale()
@@ -182,8 +187,6 @@ func pull():
 			damptmp = rayCollidedtmp.get_linear_damp()
 		forceStrength = rayCollidedNode.get_mass()*50
 		rayCollidedNode.set_gravity_scale(0)
-		rayCollidedNodeOrigin = rayCollidedNode.get_global_transform().origin
-		handOrigin = get_global_transform().origin
 		towardVector = handOrigin-rayCollidedNodeOrigin
 		if abs(towardVector[0]) > abs(towardVector[1]) && abs(towardVector[0]) > abs(towardVector[2]):
 			forceScaleFactor = abs(forceStrength/towardVector[0])

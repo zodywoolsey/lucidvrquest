@@ -19,6 +19,7 @@ var rayCollidedNodeOrigin
 var handOrigin
 var towardVector
 var forceScaleFactor
+var distance
 var forceStrength = 50
 
 var gravtmp = null
@@ -34,6 +35,7 @@ var grabbed = false
 var isGrabbable
 var grabbedObject = null
 var grabbedObjectOrigin
+var collidedArea = null
 
 # var velStartTransformOrigin
 # var velEndTransformOrigin
@@ -52,10 +54,10 @@ func _ready():
 
 func _physics_process(delta):
 	if grabDown:
-		grabRigidGrabbable()
+		grab()
 	if triggerDown && grabDown && !grabbed:
-		grabRigidGrabbable()
-		pullRigidGrabbable()
+		grab()
+		pull()
 	if (grabbedObject && grabbed):
 		var isStaticCollided = false
 		collides = handArea.get_overlapping_bodies()
@@ -125,7 +127,13 @@ func _on_rightHandArea_body_entered(body):
 func _on_rightHandArea_body_exited(body):
 	isCollided = false
 
-func grabRigidGrabbable():
+func _on_rightHandArea_area_shape_entered(areaId, area, stupidParam, stupidParam2):
+	collidedArea = area
+
+func _on_rightHandArea_area_shape_exited(areaId, area, stupidParam, stupidParam2):
+	collidedArea = null
+
+func grab():
 	if isCollided && !grabbed:
 		collides = handArea.get_overlapping_bodies()
 		for col in collides:
@@ -148,19 +156,26 @@ func grabRigidGrabbable():
 						gravtmp = null
 					rayOn = false
 				break
+	if collidedArea != null && checkNodeGroups(collidedArea, 'spawnBox') && !grabbed:
+		collidedArea.activate()
+		collidedArea = null
 
-func pullRigidGrabbable():
+func pull():
 	applyGrabShader()
 	if handRay.is_colliding() && !rayCollidedNode && handRay.get_collider().get_class() == "RigidBody" && checkNodeGroups(handRay.get_collider(), 'grabbable'):
 		rayCollidedNode = get_node(handRay.get_collider().get_path())
 		rayCollidedNodeMesh = rayCollidedNode.find_node('MeshInstance',true,true)
 		pullInterval = 0
 	if grabDown && rayCollidedNode:
-		if pullInterval < 72:
-			pullInterval = pullInterval+1
-		else:
-			pullInterval = 0
+		rayCollidedNodeOrigin = rayCollidedNode.get_global_transform().origin
+		handOrigin = get_global_transform().origin
+		# distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2)+pow(handOrigin.y-rayCollidedNodeOrigin.y, 2) )
+		distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2) )
+		print(distance)
+		if distance < (pullInterval/50)+.4:
 			rayCollidedNode.global_transform = global_transform
+		else:
+			pullInterval += 1
 		if !rayCollidedtmp || !gravtmp || !damptmp:
 			rayCollidedtmp = rayCollidedNode
 			gravtmp = rayCollidedtmp.get_gravity_scale()
@@ -172,8 +187,6 @@ func pullRigidGrabbable():
 			damptmp = rayCollidedtmp.get_linear_damp()
 		forceStrength = rayCollidedNode.get_mass()*50
 		rayCollidedNode.set_gravity_scale(0)
-		rayCollidedNodeOrigin = rayCollidedNode.get_global_transform().origin
-		handOrigin = get_global_transform().origin
 		towardVector = handOrigin-rayCollidedNodeOrigin
 		if abs(towardVector[0]) > abs(towardVector[1]) && abs(towardVector[0]) > abs(towardVector[2]):
 			forceScaleFactor = abs(forceStrength/towardVector[0])
@@ -215,6 +228,5 @@ func applyGrabShader():
 		if rayCollidedNodeMesh:
 			rayCollidedNodeMesh.material_override = grabShader
 			rayCollidedNodeMesh.material_override.next_pass = rayCollidedNodeMesh.get_surface_material(0)
-			
 
 
