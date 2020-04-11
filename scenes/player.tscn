@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts_gd/rightHand.gd" type="Script" id=1]
 [ext_resource path="res://scripts_gd/leftHand.gd" type="Script" id=2]
 [ext_resource path="res://notTooBright.tres" type="Material" id=3]
+[ext_resource path="res://scripts_gd/player.gd" type="Script" id=4]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.001
@@ -19,7 +20,8 @@ margin = 0.001
 extents = Vector3( 0.01, 0.01, 0.01 )
 
 [sub_resource type="CubeMesh" id=5]
-size = Vector3( 0.005, 5, 0.005 )
+flip_faces = true
+size = Vector3( 0.01, 5, 0.01 )
 
 [sub_resource type="Shader" id=6]
 code = "shader_type spatial;
@@ -40,6 +42,7 @@ void fragment(){
 shader = SubResource( 6 )
 
 [node name="player" type="ARVROrigin"]
+script = ExtResource( 4 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="."]
 near = 0.01
@@ -76,7 +79,7 @@ disabled = true
 [node name="rightHandRay" type="RayCast" parent="rightHand/rightHandBody"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 visible = false
-cast_to = Vector3( 0, 500, 0 )
+cast_to = Vector3( 0, 5, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="rightHand/rightHandBody/rightHandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
@@ -119,7 +122,7 @@ disabled = true
 [node name="leftHandRay" type="RayCast" parent="leftHand/leftHandBody"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 visible = false
-cast_to = Vector3( 0, 500, 0 )
+cast_to = Vector3( 0, 5, 0 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="leftHand/leftHandBody/leftHandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )

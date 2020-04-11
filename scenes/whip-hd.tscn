@@ -432,7 +432,7 @@ __meta__ = {
 
 [node name="whipLink17" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899832, 0 )
-mass = 0.2
+mass = 0.5
 continuous_cd = true
 can_sleep = false
 
@@ -456,7 +456,7 @@ angular_limit_z/lower_angle = -15.0
 
 [node name="whipLink18" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.949832, 0 )
-mass = 0.2
+mass = 0.5
 continuous_cd = true
 can_sleep = false
 
@@ -480,7 +480,7 @@ angular_limit_z/lower_angle = -15.0
 
 [node name="whipLink19" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999832, 0 )
-mass = 0.2
+mass = 0.5
 continuous_cd = true
 can_sleep = false
 

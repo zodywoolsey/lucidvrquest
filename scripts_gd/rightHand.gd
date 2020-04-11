@@ -142,7 +142,10 @@ func grab():
 			if col.get_class() == "RigidBody" && isGrabbable:
 				grabbedObject = col
 				grabbedObject.global_transform = handBody.global_transform
-				handGrab.set_node_b(col.get_path())
+				# if grabbedObject.handle:
+				# 	grabbedObject.global_transform.position = handBody.global_transform.position+grabbedObject.handle
+				# else:
+				# handGrab.set_node_b(col.get_path())
 				grabbed = true
 				if handRay.enabled == true:
 					handRay.enabled = false
