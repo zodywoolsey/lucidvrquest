@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FBX/Arch_Door_bottompivot.fbx" type="PackedScene" id=1]
+
+[node name="Arch_Door_bottompivot" instance=ExtResource( 1 )]

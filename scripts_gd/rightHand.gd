@@ -127,10 +127,10 @@ func _on_rightHandArea_body_entered(body):
 func _on_rightHandArea_body_exited(body):
 	isCollided = false
 
-func _on_rightHandArea_area_shape_entered(areaId, area, stupidParam, stupidParam2):
+func _on_rightHandArea_area_shape_entered(_areaId, area, _stupidParam, _stupidParam2):
 	collidedArea = area
 
-func _on_rightHandArea_area_shape_exited(areaId, area, stupidParam, stupidParam2):
+func _on_rightHandArea_area_shape_exited(_areaId, _area, _stupidParam, _stupidParam2):
 	collidedArea = null
 
 func grab():
@@ -145,7 +145,7 @@ func grab():
 				# if grabbedObject.handle:
 				# 	grabbedObject.global_transform.position = handBody.global_transform.position+grabbedObject.handle
 				# else:
-				# handGrab.set_node_b(col.get_path())
+				handGrab.set_node_b(col.get_path())
 				grabbed = true
 				if handRay.enabled == true:
 					handRay.enabled = false

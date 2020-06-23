@@ -11,6 +11,9 @@ var arServ = ''
 var settingsFile
 var interface = null
 
+var nums = []
+var meshes = []
+
 func _ready():
 	interface = ARVRServer.find_interface("OVRMobile")
 	arServ = 'ovrMobile'
@@ -45,8 +48,69 @@ func _ready():
 			if arServ == 'ovr':
 				get_viewport().keep_3d_linear = true
 
+	# initrand()
+	# generateTris()
+
 # func _process(_delta):
 # 	if !perform_runtime_config:
 # 		ovr_performance.set_clock_levels(1, 1)
 # 		ovr_performance.set_extra_latency_mode(1)
 # 		perform_runtime_config = true
+
+# func initrand():
+# 	nums = []
+# 	var scale = 50
+# 	for x in range(scale):
+# 		for y in range(scale):
+# 			seed( tan(x)-tan(y) )
+# 			nums.append(randi())
+
+# func generateTris():
+# 	var tmpx = 0
+# 	var tmpy = 0
+# 	print( sqrt(len(nums)) )
+# 	for i in range(len(nums)):
+# 		seed(nums[i])
+# 		var tmpars = vertsFromInt(randi())
+# 		var tmparraymesh = ArrayMesh.new()
+# 		tmparraymesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, tmpars)
+# 		var testmesh = MeshInstance.new()
+# 		testmesh.mesh = tmparraymesh
+# 		add_child(testmesh)
+# 		meshes.append(testmesh)
+# 		if tmpx < sqrt(len(nums))/2:
+# 			tmpx += .5
+# 		else:
+# 			tmpx = 0
+# 			tmpy += .5
+# 		if tmpy == sqrt(len(nums))/2:
+# 			tmpy = 0
+# 		var projectedpos = get_viewport().get_camera().project_position(Vector2((tmpx*20)+0,(tmpy*20)+0),40)
+# 		# testmesh.translate(Vector3(tmpx,0,tmpy))
+# 		testmesh.translate(projectedpos)
+
+# func vertsFromInt(i):
+# 	var tmp1 = Vector3()
+# 	tmp1.x = (float(((i/10)%10))/10.0)*2
+# 	tmp1.y = (float(((i/100)%10))/10.0)*2
+# 	tmp1.z = (float(((i/1000)%10))/10.0)*2
+# 	var tmp2 = Vector3()
+# 	tmp2.x = (float(((i/100)%10))/10.0)*2
+# 	tmp2.y = (float(((i/1000)%10))/10.0)*2
+# 	tmp2.z = (float(((i/10000)%10))/10.0)*2
+# 	var tmp3 = Vector3()
+# 	tmp3.x = (float(((i/1000)%10))/10.0)*2
+# 	tmp3.y = (float(((i/10000)%10))/10.0)*2
+# 	tmp3.z = (float(((i/100000)%10))/10.0)*2
+
+# 	var tmpVerts = PoolVector3Array()
+# 	tmpVerts.push_back(tmp1)
+# 	tmpVerts.push_back(tmp2)
+# 	tmpVerts.push_back(tmp3)
+	
+# 	var tmpars = []
+# 	tmpars.resize(ArrayMesh.ARRAY_MAX)
+# 	tmpars[ArrayMesh.ARRAY_VERTEX] = tmpVerts
+
+# 	return tmpars
+	
