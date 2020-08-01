@@ -37,6 +37,8 @@ var grabbedObject = null
 var grabbedObjectOrigin
 var collidedArea = null
 
+var useObject = false
+
 # var velStartTransformOrigin
 # var velEndTransformOrigin
 # var vel
@@ -69,6 +71,8 @@ func _physics_process(delta):
 		if isStaticCollided && ( sqrt( pow(grabbedObjectOrigin.x-global_transform.origin.x,2)+pow(grabbedObjectOrigin.y-global_transform.origin.y,2)+pow(grabbedObjectOrigin.z-global_transform.origin.z,2) ) > .1 ):
 			handGrab.set_node_b('')
 			grabbedObject = null
+	if grabbedObject && useObject:
+		grabbedObject.activate()
 	if otherHandGrab.get_node_b() == handGrab.get_node_b():
 		handGrab.set_node_b('')
 		grabbedObject = null
@@ -90,6 +94,8 @@ func _on_rightHand_button_pressed(button):
 		rayOn = true
 		handRay.enabled = true
 		handRay.show()
+	if button == 15 && grabbed:
+		useObject = true
 
 func _on_rightHand_button_release(button):
 	if button == 2:
@@ -105,6 +111,7 @@ func _on_rightHand_button_release(button):
 			damptmp = null
 	if button == 15:
 		triggerDown = false
+		useObject = false
 		rayOn = false
 		handRay.enabled = false
 		handRay.hide()
@@ -174,7 +181,7 @@ func pull():
 		handOrigin = get_global_transform().origin
 		# distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2)+pow(handOrigin.y-rayCollidedNodeOrigin.y, 2) )
 		distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2) )
-		print(distance)
+		# print(distance)
 		if distance < (pullInterval/50)+.4:
 			rayCollidedNode.global_transform = global_transform
 		else:

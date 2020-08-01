@@ -171,7 +171,7 @@ func pull():
 		handOrigin = get_global_transform().origin
 		# distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2)+pow(handOrigin.y-rayCollidedNodeOrigin.y, 2) )
 		distance = sqrt( pow(handOrigin.x-rayCollidedNodeOrigin.x, 2)+pow(handOrigin.z-rayCollidedNodeOrigin.z, 2) )
-		print(distance)
+		# print(distance)
 		if distance < (pullInterval/50)+.4:
 			rayCollidedNode.global_transform = global_transform
 		else:

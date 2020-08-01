@@ -24,12 +24,14 @@ func _physics_process(delta):
 	ly = left.get_joystick_axis(1)
 
 	if rx > .15 || rx < -.15:
-		print("rx" + str(rx))
+		# print("rx" + str(rx))
+		pass
 	if ry > .15 || ry < -.15:
-		print("ry" + str(ry))
+		# print("ry" + str(ry))
+		pass
 	if lx > .15 || lx < -.15:
-		print("lx" + str(lx))
+		# print("lx" + str(lx))
 		translate( Vector3(lx/50,0,0))
 	if ly > .15 || ly < -.15:
-		print("ly" + str(ly))
-		translate( Vector3(0,0,ly/50))
+		# print("ly" + str(ly))
+		translate( Vector3(0,0,-(ly/50)))
