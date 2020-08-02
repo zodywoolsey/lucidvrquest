@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://FBX/Banner.fbx" type="PackedScene" id=1]
-
-[node name="Banner" instance=ExtResource( 1 )]
