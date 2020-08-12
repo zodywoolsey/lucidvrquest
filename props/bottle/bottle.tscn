@@ -7,15 +7,18 @@ margin = 0.001
 radius = 0.03
 height = 0.203889
 
-[node name="bottle" type="RigidBody"]
+[node name="bottle" type="RigidBody" groups=[
+"grabbable",
+]]
 continuous_cd = true
 contact_monitor = true
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0816658, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0369708, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0384266, 0 )
 mesh = ExtResource( 1 )
 material/0 = null

@@ -1,29 +1,35 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts_gd/rightHand.gd" type="Script" id=1]
 [ext_resource path="res://scripts_gd/leftHand.gd" type="Script" id=2]
 [ext_resource path="res://notTooBright.tres" type="Material" id=3]
 [ext_resource path="res://scripts_gd/player.gd" type="Script" id=4]
+[ext_resource path="res://scenes/rigidplayer.gd" type="Script" id=5]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="CapsuleShape" id=1]
+margin = 0.001
+radius = 0.1
+height = 0.6
+
+[sub_resource type="BoxShape" id=2]
 margin = 0.001
 extents = Vector3( 0.05, 0.05, 0.05 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=3]
 
-[sub_resource type="CubeMesh" id=3]
-material = SubResource( 2 )
-size = Vector3( 0.1, 0.1, 0.1 )
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 0.05, 0.05, 0.05 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=5]
 margin = 0.001
 extents = Vector3( 0.01, 0.01, 0.01 )
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=6]
 flip_faces = true
 size = Vector3( 0.01, 5, 0.01 )
 
-[sub_resource type="Shader" id=6]
+[sub_resource type="Shader" id=7]
 code = "shader_type spatial;
 
 render_mode unshaded;
@@ -38,8 +44,8 @@ void fragment(){
 	//ALBEDO = vec3(0,0,0);
 }"
 
-[sub_resource type="ShaderMaterial" id=7]
-shader = SubResource( 6 )
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
 
 [node name="player" type="ARVROrigin"]
 script = ExtResource( 4 )
@@ -47,6 +53,24 @@ script = ExtResource( 4 )
 [node name="ARVRCamera" type="ARVRCamera" parent="."]
 near = 0.01
 far = 8192.0
+
+[node name="rigidplayer" type="RigidBody" parent="ARVRCamera"]
+mode = 2
+mass = 50.0
+continuous_cd = true
+contact_monitor = true
+can_sleep = false
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+linear_damp = 0.8
+angular_damp = 1.0
+script = ExtResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ARVRCamera/rigidplayer"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.316842, 0 )
+shape = SubResource( 1 )
 
 [node name="rightHand" type="ARVRController" parent="."]
 controller_id = 2
@@ -60,10 +84,10 @@ linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="rightHand/rightHandArea"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="rightHand/rightHandArea/CollisionShape"]
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 3 )
 
 [node name="rightHandGrab" type="Generic6DOFJoint" parent="rightHand"]
@@ -71,10 +95,9 @@ nodes/node_a = NodePath("../rightHandBody")
 
 [node name="rightHandBody" type="KinematicBody" parent="rightHand"]
 
-[node name="CollisionShape" type="CollisionShape" parent="rightHand/rightHandBody"]
+[node name="handcolliderr" type="CollisionShape" parent="rightHand/rightHandBody"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
-shape = SubResource( 4 )
-disabled = true
+shape = SubResource( 5 )
 
 [node name="rightHandRay" type="RayCast" parent="rightHand/rightHandBody"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
@@ -84,8 +107,8 @@ cast_to = Vector3( 0, 5, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="rightHand/rightHandBody/rightHandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 cast_shadow = 0
-mesh = SubResource( 5 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
 
 [node name="leftHand" type="ARVRController" parent="."]
 script = ExtResource( 2 )
@@ -98,10 +121,10 @@ linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="leftHand/leftHandArea"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="leftHand/leftHandArea/CollisionShape"]
-mesh = SubResource( 3 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 3 )
 
 [node name="leftHandGrab" type="Generic6DOFJoint" parent="leftHand"]
@@ -115,8 +138,8 @@ precision = 1000
 collision_layer = 0
 collision_mask = 0
 
-[node name="CollisionShape" type="CollisionShape" parent="leftHand/leftHandBody"]
-shape = SubResource( 4 )
+[node name="handcolliderl" type="CollisionShape" parent="leftHand/leftHandBody"]
+shape = SubResource( 5 )
 disabled = true
 
 [node name="leftHandRay" type="RayCast" parent="leftHand/leftHandBody"]
@@ -126,8 +149,8 @@ cast_to = Vector3( 0, 5, 0 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="leftHand/leftHandBody/leftHandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
 [connection signal="button_pressed" from="rightHand" to="rightHand" method="_on_rightHand_button_pressed"]
 [connection signal="button_release" from="rightHand" to="rightHand" method="_on_rightHand_button_release"]
 [connection signal="area_shape_entered" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_area_shape_entered"]

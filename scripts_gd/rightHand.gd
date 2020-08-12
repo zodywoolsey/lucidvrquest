@@ -5,6 +5,7 @@ var handArea
 var handBody
 var handRay
 var grabShader
+var handcollider
 
 var otherHandGrab
 
@@ -52,6 +53,7 @@ func _ready():
 	handBody = findNode('rightHandBody')
 	handRay = findNode('rightHandRay')
 	grabShader = load('res://handGrabMaterial.tres')
+	handcollider = findNode('handcolliderr')
 
 
 func _physics_process(delta):
@@ -81,6 +83,8 @@ func _physics_process(delta):
 		grabbedObject = null
 	if triggerDown:
 		applyGrabShader()
+#	if !grabbed:
+#		handArea.get_overlapping_bodies()
 			
 func _on_rightHand_button_pressed(button):
 	if button == 2:
@@ -157,6 +161,7 @@ func grab():
 				if handRay.enabled == true:
 					handRay.enabled = false
 					handRay.hide()
+					handcollider.set_disabled(true)
 					if rayCollidedtmp:
 						rayCollidedtmp.set_gravity_scale(gravtmp)
 						rayCollidedtmp.set_linear_damp(damptmp)
