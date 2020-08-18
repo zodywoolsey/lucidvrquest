@@ -1,15 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts_gd/rightHand.gd" type="Script" id=1]
 [ext_resource path="res://scripts_gd/leftHand.gd" type="Script" id=2]
 [ext_resource path="res://notTooBright.tres" type="Material" id=3]
 [ext_resource path="res://scripts_gd/player.gd" type="Script" id=4]
-[ext_resource path="res://scenes/rigidplayer.gd" type="Script" id=5]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="SphereShape" id=1]
 margin = 0.001
-radius = 0.1
-height = 0.6
+radius = 0.05
 
 [sub_resource type="BoxShape" id=2]
 margin = 0.001
@@ -66,10 +64,8 @@ axis_lock_angular_y = true
 axis_lock_angular_z = true
 linear_damp = 0.8
 angular_damp = 1.0
-script = ExtResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ARVRCamera/rigidplayer"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.316842, 0 )
 shape = SubResource( 1 )
 
 [node name="rightHand" type="ARVRController" parent="."]

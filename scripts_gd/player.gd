@@ -13,8 +13,9 @@ onready var ly
 onready var rigidplayer = findNode('rigidplayer')
 
 # Called when the node enters the scene tree for the first time.
-#func _ready():
-#	rigidplayer = findNode('rigidplayer')
+func _ready():
+	print('player started')
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +33,7 @@ func _physics_process(delta):
 		pass
 	if lx > .15 || lx < -.15:
 		# print("lx" + str(lx))
-		translate( Vector3(lx/1.0,0,0))
+		translate(Vector3( cam.transform.origin.x, 0.0, cam.transform.origin.y ))
 		pass
 	if ly > .15 || ly < -.15:
 		# print("ly" + str(ly))
