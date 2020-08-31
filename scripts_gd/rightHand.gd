@@ -4,6 +4,7 @@ var handGrab
 var handArea
 var handBody
 var handRay
+var uiRay
 var grabShader
 var handcollider
 
@@ -52,6 +53,7 @@ func _ready():
 	handArea = findNode('rightHandArea')
 	handBody = findNode('rightHandBody')
 	handRay = findNode('rightHandRay')
+	uiRay = findNode('rightUiRay')
 	grabShader = load('res://handGrabMaterial.tres')
 	handcollider = findNode('handcolliderr')
 
@@ -74,7 +76,8 @@ func _physics_process(delta):
 			handGrab.set_node_b('')
 			grabbedObject = null
 	if grabbedObject && useObject:
-		grabbedObject.activate()
+		if grabbedObject.is_in_group("useable"):
+			grabbedObject.activate()
 	if otherHandGrab.get_node_b() == handGrab.get_node_b():
 		handGrab.set_node_b('')
 		grabbedObject = null
@@ -87,19 +90,28 @@ func _physics_process(delta):
 #		handArea.get_overlapping_bodies()
 			
 func _on_rightHand_button_pressed(button):
+	print(button)
 	if button == 2:
 		grabDown = true
 		if rayCollidedNodeMesh:
 			rayCollidedNodeMesh.material_override = null
 			rayCollidedNodeMesh = null
 			tmpMat = null
-	if button == 15 && !grabbed:
+	if button == 15 && !grabbed && !uiRay.enabled:
 		triggerDown = true
 		rayOn = true
 		handRay.enabled = true
 		handRay.show()
 	if button == 15 && grabbed:
 		useObject = true
+	if button == 15 && uiRay.enabled:
+		uiRay.press()
+	if button == 7 && uiRay.enabled == false:
+		uiRay.enabled = true
+		uiRay.show()
+	elif button == 7 && uiRay.enabled == true:
+		uiRay.enabled = false
+		uiRay.hide()
 
 func _on_rightHand_button_release(button):
 	if button == 2:
@@ -130,6 +142,8 @@ func _on_rightHand_button_release(button):
 			rayCollidedNodeMesh.material_override = null
 			rayCollidedNodeMesh = null
 			tmpMat = null
+		if uiRay.enabled:
+			uiRay.release()
 
 
 func _on_rightHandArea_body_entered(body):
@@ -152,7 +166,7 @@ func grab():
 			isGrabbable = checkNodeGroups(col, 'grabbable')
 			if col.get_class() == "RigidBody" && isGrabbable:
 				grabbedObject = col
-				grabbedObject.global_transform = handBody.global_transform
+				# grabbedObject.global_transform = handBody.global_transform
 				# if grabbedObject.handle:
 				# 	grabbedObject.global_transform.position = handBody.global_transform.position+grabbedObject.handle
 				# else:

@@ -28,7 +28,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-global="*res://scripts_gd/global.gd"
+global="res://scripts_gd/global.gd"
 
 [display]
 
@@ -41,7 +41,7 @@ singletons=[ "res://addons/godot-oculus/godot_oculus.gdnlib", "res://addons/godo
 
 [physics]
 
-common/physics_fps=10
+common/physics_fps=144
 common/physics_jitter_fix=0.0
 3d/physics_engine="Bullet"
 common/enable_object_picking=false

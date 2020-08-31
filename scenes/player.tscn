@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scripts_gd/rightHand.gd" type="Script" id=1]
 [ext_resource path="res://scripts_gd/leftHand.gd" type="Script" id=2]
-[ext_resource path="res://notTooBright.tres" type="Material" id=3]
+[ext_resource path="res://materials/handrayblue.tres" type="Material" id=3]
 [ext_resource path="res://scripts_gd/player.gd" type="Script" id=4]
+[ext_resource path="res://materials/handrayred.tres" type="Material" id=5]
+[ext_resource path="res://uimeshtest/RayCast.gd" type="Script" id=6]
 
 [sub_resource type="SphereShape" id=1]
 margin = 0.001
@@ -11,44 +13,34 @@ radius = 0.05
 
 [sub_resource type="BoxShape" id=2]
 margin = 0.001
-extents = Vector3( 0.05, 0.05, 0.05 )
+extents = Vector3( 0.03, 0.03, 0.03 )
 
 [sub_resource type="SpatialMaterial" id=3]
 
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
-size = Vector3( 0.05, 0.05, 0.05 )
+size = Vector3( 0.06, 0.06, 0.06 )
 
 [sub_resource type="BoxShape" id=5]
 margin = 0.001
 extents = Vector3( 0.01, 0.01, 0.01 )
 
 [sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.01, 5, 0.01 )
+
+[sub_resource type="CubeMesh" id=7]
 flip_faces = true
 size = Vector3( 0.01, 5, 0.01 )
 
-[sub_resource type="Shader" id=7]
-code = "shader_type spatial;
-
-render_mode unshaded;
-
-void fragment(){
-	
-	vec2 uv = (FRAGCOORD.xy/VIEWPORT_SIZE).xy;
-	
-	float calced = sin(uv.x*1000.0);
-	ALBEDO = vec3( 1.0, tan((sin(uv.x)-cos(uv.y+(TIME*10.0))*TIME)*1000.0),.4  );
-	//ALPHA = (EMISSION.r+EMISSION.g+EMISSION.b)/3.0;
-	//ALBEDO = vec3(0,0,0);
-}"
-
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
+[sub_resource type="CubeMesh" id=8]
+flip_faces = true
+size = Vector3( 0.01, 5, 0.01 )
 
 [node name="player" type="ARVROrigin"]
 script = ExtResource( 4 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="."]
+current = true
 near = 0.01
 far = 8192.0
 
@@ -84,7 +76,7 @@ shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="rightHand/rightHandArea/CollisionShape"]
 mesh = SubResource( 4 )
-material/0 = ExtResource( 3 )
+material/0 = null
 
 [node name="rightHandGrab" type="Generic6DOFJoint" parent="rightHand"]
 nodes/node_a = NodePath("../rightHandBody")
@@ -104,7 +96,22 @@ cast_to = Vector3( 0, 5, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 cast_shadow = 0
 mesh = SubResource( 6 )
-material/0 = SubResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="rightUiRay" type="RayCast" parent="rightHand/rightHandBody"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+visible = false
+cast_to = Vector3( 0, 5, 0 )
+collision_mask = 3
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="rightHand/rightHandBody/rightUiRay"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
+cast_shadow = 0
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
 
 [node name="leftHand" type="ARVRController" parent="."]
 script = ExtResource( 2 )
@@ -121,7 +128,7 @@ shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="leftHand/leftHandArea/CollisionShape"]
 mesh = SubResource( 4 )
-material/0 = ExtResource( 3 )
+material/0 = null
 
 [node name="leftHandGrab" type="Generic6DOFJoint" parent="leftHand"]
 nodes/node_a = NodePath("../leftHandBody")
@@ -145,8 +152,8 @@ cast_to = Vector3( 0, 5, 0 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="leftHand/leftHandBody/leftHandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
-mesh = SubResource( 6 )
-material/0 = SubResource( 8 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 5 )
 [connection signal="button_pressed" from="rightHand" to="rightHand" method="_on_rightHand_button_pressed"]
 [connection signal="button_release" from="rightHand" to="rightHand" method="_on_rightHand_button_release"]
 [connection signal="area_shape_entered" from="rightHand/rightHandArea" to="rightHand" method="_on_rightHandArea_area_shape_entered"]
