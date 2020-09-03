@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="dungeonGame"
+config/name="lucidvrquest"
 run/main_scene="res://scenes/startup.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
