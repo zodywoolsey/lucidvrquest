@@ -1,9 +1,12 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://guis/physicspanel.gd" type="Script" id=1]
 
 [node name="gui" type="Control"]
 margin_right = 250.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 250, 500 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,45 +46,62 @@ margin_bottom = 224.0
 rect_min_size = Vector2( 250, 200 )
 color = Color( 0.14902, 0.172549, 0.231373, 1 )
 
-[node name="Tree" type="Tree" parent="VBoxContainer/general"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 246.0
-margin_bottom = 196.0
-rect_min_size = Vector2( 242, 0 )
-custom_constants/hseparation = 214
+[node name="gravityscale" type="Label" parent="VBoxContainer/general"]
+margin_left = 4.4545
+margin_top = 4.89995
+margin_right = 86.4545
+margin_bottom = 18.8999
+text = "Gravity Scale:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer/general/Tree"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Test"
+[node name="gravityone" type="Button" parent="VBoxContainer/general"]
+margin_left = 97.9989
+margin_top = 23.6088
+margin_right = 137.999
+margin_bottom = 63.6088
+rect_min_size = Vector2( 40, 40 )
+action_mode = 0
+button_mask = 7
+text = "-0.1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="VBoxContainer/general/Tree"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Test2"
+[node name="gravitytwo" type="Button" parent="VBoxContainer/general"]
+margin_left = 97.9989
+margin_top = 63.6088
+margin_right = 137.999
+margin_bottom = 103.609
+rect_min_size = Vector2( 40, 40 )
+text = "0.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="VBoxContainer/general/Tree"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Test3"
+[node name="gravitythree" type="Button" parent="VBoxContainer/general"]
+margin_left = 97.9989
+margin_top = 103.609
+margin_right = 137.999
+margin_bottom = 143.609
+rect_min_size = Vector2( 40, 40 )
+text = "0.5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="VBoxContainer/general/Tree"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Test4"
+[node name="gravityfour" type="Button" parent="VBoxContainer/general"]
+margin_left = 97.9989
+margin_top = 143.609
+margin_right = 137.999
+margin_bottom = 183.609
+rect_min_size = Vector2( 40, 40 )
+text = "1.0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="VBoxContainer/general/gravityone" to="." method="_on_gravityone_pressed"]
+[connection signal="pressed" from="VBoxContainer/general/gravitytwo" to="." method="_on_gravitytwo_pressed"]
+[connection signal="pressed" from="VBoxContainer/general/gravitythree" to="." method="_on_gravitythree_pressed"]
+[connection signal="button_up" from="VBoxContainer/general/gravityfour" to="." method="_on_gravityfour_button_up"]

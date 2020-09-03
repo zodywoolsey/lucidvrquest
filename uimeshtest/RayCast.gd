@@ -31,6 +31,7 @@ func press():
 			selected = col
 			var tmp = gui.instance()
 			get_tree().root.add_child(tmp)
+			tmp.transform.origin = col.get_parent().transform.origin + Vector3( 0.0, tmp.node_quad.mesh.size.y, 0.0 )
 			tmp.select(col)
 
 func release():

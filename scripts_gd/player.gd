@@ -12,18 +12,25 @@ onready var ly
 
 onready var rigidplayer = findNode('rigidplayer')
 
+var rloc
+var lloc
+var hloc
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print('player started')
 	
-
+func _process(delta):
+	rloc = right.get_node("rightHandArea/CollisionShape/MeshInstance").global_transform
+	lloc =  left.get_node( "leftHandArea/CollisionShape/MeshInstance").global_transform
+	hloc = get_node("ARVRCamera").global_transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	rx = right.get_joystick_axis(0)
 	ry = right.get_joystick_axis(1)
-	lx = left.get_joystick_axis(0)
-	ly = left.get_joystick_axis(1)
+	lx =  left.get_joystick_axis(0)
+	ly =  left.get_joystick_axis(1)
 
 	if rx > .15 || rx < -.15:
 		# print("rx" + str(rx))

@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scripts_gd/startup.gd" type="Script" id=1]
+[ext_resource path="res://startup.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://netcode/netcode.gd" type="Script" id=3]
+[ext_resource path="res://scenes/whip-big.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/woodLookingShader.tres" type="Material" id=4]
 [ext_resource path="res://scenes/placeholdermeshes.tscn" type="PackedScene" id=5]
-[ext_resource path="res://netcode/nettest3dpanel.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 4 )
@@ -26,67 +25,62 @@ points = PoolVector3Array( -0.05, 0.05, 0.05, 0.05, 0.05, -0.05, 0.05, 0.05, 0.0
 
 [sub_resource type="BoxShape" id=6]
 
-[node name="Node" type="Node"]
-script = ExtResource( 3 )
-
-[node name="startup" type="Spatial" parent="."]
+[node name="startup" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="player" parent="startup" instance=ExtResource( 2 )]
+[node name="player" parent="." instance=ExtResource( 2 )]
 
-[node name="RigidBody" type="RigidBody" parent="startup"]
+[node name="RigidBody" type="RigidBody" parent="."]
 mode = 1
 mass = 65535.0
 gravity_scale = 0.0
 linear_damp = 100.0
 angular_damp = 100.0
 
-[node name="MeshInstance" type="MeshInstance" parent="startup/RigidBody"]
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0499373, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="startup/RigidBody"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0499373, 0 )
 shape = SubResource( 2 )
 
-[node name="RigidBody2" type="RigidBody" parent="startup" groups=[
+[node name="RigidBody2" type="RigidBody" parent="." groups=[
 "grabbable",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.238242, -1.30755 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238242, -1.30755 )
+gravity_scale = 0.5
 continuous_cd = true
 contact_monitor = true
 can_sleep = false
 
-[node name="Area" type="Area" parent="startup/RigidBody2" groups=[
+[node name="Area" type="Area" parent="RigidBody2" groups=[
 "edit",
 ]]
 
-[node name="MeshInstance" type="MeshInstance" parent="startup/RigidBody2/Area"]
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody2/Area"]
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="startup/RigidBody2/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody2/Area"]
 shape = SubResource( 5 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="startup/RigidBody2"]
+[node name="CollisionShape2" type="CollisionShape" parent="RigidBody2"]
 shape = SubResource( 5 )
 
-[node name="placeholdermeshes" parent="startup" instance=ExtResource( 5 )]
+[node name="whip-big" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.0870325, 0 )
 
-[node name="Area" type="Area" parent="startup"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3 )
-space_override = 3
-gravity_point = true
-gravity = -9.8
+[node name="placeholdermeshes" parent="." instance=ExtResource( 5 )]
 
-[node name="CollisionShape" type="CollisionShape" parent="startup/Area"]
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3 )
 shape = SubResource( 6 )
 
-[node name="OmniLight" type="OmniLight" parent="startup"]
+[node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18607, 5.56328, -4.76837e-07 )
 omni_range = 40.0
-
-[node name="nettest3dpanel" parent="startup" instance=ExtResource( 6 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.999895, 1, -1 )

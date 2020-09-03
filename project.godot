@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="dungeonGame"
-run/main_scene="res://scenes/vrMain.tscn"
+run/main_scene="res://scenes/startup.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.png"
@@ -49,9 +49,12 @@ common/enable_object_picking=false
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/intended_usage/framebuffer_allocation.mobile=2
 threads/thread_model=2
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+quality/directional_shadow/size.mobile=4096
+quality/shadow_atlas/size.mobile=4096
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/depth/hdr.mobile=true
 environment/default_environment="res://envs/default_env.tres"
