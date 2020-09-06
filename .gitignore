@@ -11,3 +11,4 @@ android/
 mac/
 windows/
 *.DS_Store
+.DS_Store
