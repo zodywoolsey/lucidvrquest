@@ -8,7 +8,7 @@ const PORT = 5000
 
 var id
 
-onready var vrscene = get_node("startup")
+onready var vrscene = get_node("Viewport/startup")
 
 var nettestpanel
 var nettestconnectbutton

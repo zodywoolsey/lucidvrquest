@@ -19,6 +19,9 @@ var hloc
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print('player started')
+	print( get_viewport().size )
+	
+	
 	
 func _process(delta):
 	rloc = right.get_node("rightHandArea/CollisionShape/MeshInstance").global_transform
