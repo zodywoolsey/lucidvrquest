@@ -75,14 +75,17 @@ func _physics_process(delta):
 		if isStaticCollided && ( sqrt( pow(grabbedObjectOrigin.x-global_transform.origin.x,2)+pow(grabbedObjectOrigin.y-global_transform.origin.y,2)+pow(grabbedObjectOrigin.z-global_transform.origin.z,2) ) > .1 ):
 			handGrab.set_node_b('')
 			grabbedObject = null
-	if grabbedObject && useObject:
-		if grabbedObject.is_in_group("useable"):
-			grabbedObject.activate()
+	if grabbedObject && grabbedObject.is_in_group("useable"):
+		if useObject:
+			grabbedObject.active = true
+		if !useObject:
+			grabbedObject.active = false
 	if otherHandGrab.get_node_b() == handGrab.get_node_b():
 		handGrab.set_node_b('')
 		grabbedObject = null
 	if grabbedObject && !grabbed:
 		handGrab.set_node_b("")
+		grabbedObject.active = false
 		grabbedObject = null
 	if triggerDown:
 		applyGrabShader()
