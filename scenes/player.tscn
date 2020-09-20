@@ -48,8 +48,8 @@ near = 0.01
 far = 8192.0
 
 [node name="rigidplayer" type="RigidBody" parent="ARVRCamera"]
-mode = 2
-mass = 50.0
+mode = 3
+mass = 10.0
 continuous_cd = true
 contact_monitor = true
 can_sleep = false
