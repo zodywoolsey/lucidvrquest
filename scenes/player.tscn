@@ -20,6 +20,7 @@ margin = 0.001
 extents = Vector3( 0.03, 0.03, 0.03 )
 
 [sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
 
 [sub_resource type="CubeMesh" id=5]
 material = SubResource( 4 )

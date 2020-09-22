@@ -51,7 +51,6 @@ common/enable_object_picking=false
 quality/intended_usage/framebuffer_allocation.mobile=2
 threads/thread_model=2
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 quality/directional_shadow/size.mobile=4096
 quality/shadow_atlas/size.mobile=4096
 environment/default_clear_color=Color( 0, 0, 0, 1 )

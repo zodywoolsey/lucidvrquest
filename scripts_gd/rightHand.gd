@@ -85,7 +85,8 @@ func _physics_process(delta):
 		grabbedObject = null
 	if grabbedObject && !grabbed:
 		handGrab.set_node_b("")
-		grabbedObject.active = false
+		if grabbedObject.is_in_group("useable"):
+			grabbedObject.active = false
 		grabbedObject = null
 	if triggerDown:
 		applyGrabShader()
