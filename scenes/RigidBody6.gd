@@ -1,8 +1,10 @@
 extends RigidBody
 
-var collidedObjects
-var iscollided
-var handle = Vector3(0,.5,0)
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,10 +12,5 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	pass
-
-
-func _on_RigidBody_body_entered(body):
-	# print(body)
-	pass
+#func _process(delta):
+#	pass

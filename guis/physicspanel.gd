@@ -15,7 +15,6 @@ func _ready():
 
 func select(col):
 	selected = col
-	print(selected.get_parent())
 
 func _on_gravityone_pressed():
 	selected.get_parent().gravity_scale = -0.1

@@ -24,8 +24,8 @@ func _ready():
 	
 	
 func _process(delta):
-	rloc = right.get_node("rightHandArea/CollisionShape/MeshInstance").global_transform
-	lloc =  left.get_node( "leftHandArea/CollisionShape/MeshInstance").global_transform
+	rloc = right.get_node("HandArea/CollisionShape/MeshInstance").global_transform
+	lloc =  left.get_node( "HandArea/CollisionShape/MeshInstance").global_transform
 	hloc = get_node("ARVRCamera").global_transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

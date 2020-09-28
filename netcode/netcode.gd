@@ -6,7 +6,7 @@ var playerupdatetimer = 0
 const SERVER_IP = "192.168.1.10"
 const PORT = 5000
 
-var id
+var thisid
 
 onready var vrscene = get_node("startup")
 
@@ -49,7 +49,7 @@ func _ready():
 func _process(delta):
 	
 	if connected == true:
-		rpc("_update_client_position",player.rloc,player.lloc,player.hloc,id)
+		rpc("_update_client_position",player.rloc,player.lloc,player.hloc,thisid)
 		playerupdatetimer = 0
 	if connectedashost == true:
 		for i in get_tree().get_network_connected_peers():
@@ -87,7 +87,7 @@ func nettestconnectbuttonpressed():
 	get_tree().network_peer = client
 	if networksignalflag == false:
 		networksignalflag = true
-	id = get_tree().get_network_unique_id()
+	thisid = get_tree().get_network_unique_id()
 
 func nettesthostbuttonpressed():
 	var server = NetworkedMultiplayerENet.new()

@@ -5,10 +5,10 @@ onready var collisionshape = get_node("RigidBody/CollisionShape")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	CollisionShape.new().shape = create_convex_collision()
+	collisionshape.shape = mesh.create_convex_shape()
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	pass

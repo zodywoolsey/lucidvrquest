@@ -124,7 +124,6 @@ func handle_ray_in(in_col_point,isclick):
 
 
 func select(col):
-	print('good')
 	gui.select(col)
 
 
