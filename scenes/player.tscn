@@ -39,6 +39,8 @@ flip_faces = true
 size = Vector3( 0.01, 5, 0.01 )
 
 [node name="rigidplayer" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="playerbody" type="CollisionShape" parent="."]
@@ -52,11 +54,13 @@ near = 0.01
 far = 8192.0
 
 [node name="KinematicBody" type="KinematicBody" parent="player/ARVRCamera"]
+visible = false
 collision_layer = 2
 collision_mask = 2147483650
 
 [node name="CollisionShape" type="CollisionShape" parent="player/ARVRCamera/KinematicBody"]
 shape = SubResource( 2 )
+disabled = true
 
 [node name="rightHand" type="ARVRController" parent="player"]
 controller_id = 2
