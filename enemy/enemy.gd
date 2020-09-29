@@ -18,7 +18,7 @@ func _physics_process(delta):
 			pathindex += 1
 		else:
 			move_and_slide((move_vec.normalized() * move_speed), Vector3.UP)
-			print(move_vec.normalized()*move_speed)
+			# print(move_vec.normalized()*move_speed)
 	else:
 		move_to(Vector3((randi()%20)-10,(randi()%4),(randi()%20)-10))
 	

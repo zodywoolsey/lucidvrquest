@@ -94,7 +94,7 @@ func _physics_process(delta):
 #		handArea.get_overlapping_bodies()
 			
 func _on_rightHand_button_pressed(button):
-	print(button)
+	# print(button)
 	if button == 2:
 		grabDown = true
 		if rayCollidedNodeMesh:

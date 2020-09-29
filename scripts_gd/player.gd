@@ -1,16 +1,28 @@
-extends ARVROrigin
+extends KinematicBody
 
 
-onready var right = get_node('rightHand')
-onready var left = get_node('leftHand')
-onready var cam = get_node('ARVRCamera')
+onready var right = get_node('player/rightHand')
+onready var left = get_node('player/leftHand')
+onready var cam = get_node('player/ARVRCamera')
+onready var playerbody = get_node('playerbody')
+onready var groundcheck = get_node('groundcheck')
+onready var playerorigin = get_node('player')
 
 onready var rx
 onready var ry
 onready var lx
 onready var ly
 
-onready var rigidplayer = findNode('rigidplayer')
+var speed = 2
+var deadzone = 0.42
+
+var h_acceleration = 6
+var h_velocity = Vector3()
+var direction = Vector3()
+var movement = Vector3()
+var gravityvec = Vector3()
+var gravity = 20
+var fullcontact = false
 
 var rloc
 var lloc
@@ -26,7 +38,7 @@ func _ready():
 func _process(delta):
 	rloc = right.get_node("HandArea/CollisionShape/MeshInstance").global_transform
 	lloc =  left.get_node( "HandArea/CollisionShape/MeshInstance").global_transform
-	hloc = get_node("ARVRCamera").global_transform
+	hloc = get_node("player/ARVRCamera").global_transform
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -35,20 +47,48 @@ func _physics_process(delta):
 	lx =  left.get_joystick_axis(0)
 	ly =  left.get_joystick_axis(1)
 
-	if rx > .15 || rx < -.15:
-		# print("rx" + str(rx))
-		pass
-	if ry > .15 || ry < -.15:
-		# print("ry" + str(ry))
-		pass
-	if lx > .15 || lx < -.15:
-		# print("lx" + str(lx))
-		translate(Vector3( cam.transform.origin.x, 0.0, cam.transform.origin.y ))
-		pass
-	if ly > .15 || ly < -.15:
-		# print("ly" + str(ly))
-		translate( Vector3(0,0,-(ly/1.0)))
-#		rigidplayer = get_node('.')
+	var leftstickvector = Vector2(lx,ly)
 
-func findNode(nodeName):
-	return get_node('/root').find_node(nodeName, true, false)
+	direction = Vector3()
+
+	if groundcheck.is_colliding():
+		fullcontact = true
+	else:
+		fullcontact = false
+
+	if not is_on_floor():
+		gravityvec += Vector3.DOWN * gravity * delta
+	elif is_on_floor() and fullcontact:
+		gravityvec = -get_floor_normal() * gravity
+	else:
+		gravityvec = -get_floor_normal()
+
+	
+	if abs(leftstickvector.x) < deadzone:
+		leftstickvector.x = 0
+	if abs(leftstickvector.y) < deadzone:
+		leftstickvector.y = 0
+
+	
+	leftstickvector = leftstickvector.normalized() * ((leftstickvector.length() - deadzone) / (1 - deadzone))
+	if leftstickvector.y > 0:
+		direction -= cam.global_transform.basis.z
+	elif leftstickvector.y < 0:
+		direction += cam.global_transform.basis.z
+	if leftstickvector.x > 0:
+		direction += cam.global_transform.basis.x
+	elif leftstickvector.x < 0:
+		direction -= cam.global_transform.basis.x
+		
+
+	direction = direction.normalized()
+	h_velocity = h_velocity.linear_interpolate(direction * speed, h_acceleration * delta)
+	movement.z = h_velocity.z + gravityvec.z
+	movement.x = h_velocity.x + gravityvec.x
+	movement.y = gravityvec.y
+
+	move_and_slide(movement, Vector3.UP)
+	
+	playerbody.global_transform.origin.x = cam.global_transform.origin.x
+	playerbody.global_transform.origin.z = cam.global_transform.origin.z
+

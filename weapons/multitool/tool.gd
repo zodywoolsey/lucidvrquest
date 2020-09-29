@@ -9,6 +9,8 @@ var bloc
 var bullet
 var t = 0
 
+var active = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	bulletloc = get_node("bulletloc")
@@ -18,6 +20,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	t += delta
+	if active:
+		activate()
 
 
 
