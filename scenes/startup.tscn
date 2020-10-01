@@ -51,9 +51,9 @@ shape = SubResource( 3 )
 [node name="placeholdermeshes" parent="startup" instance=ExtResource( 5 )]
 
 [node name="nettest3dpanel" parent="startup" instance=ExtResource( 6 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.999895, 1, -1 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.999895, -1, -1 )
 
 [node name="Navigation" parent="startup" instance=ExtResource( 7 )]
 
 [node name="tool" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54923, 0.51529, -1.71332 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.05077, 0.51529, -1.71332 )
