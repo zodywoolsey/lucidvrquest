@@ -29,7 +29,6 @@ dof_blur_near_distance = 0.3
 dof_blur_near_transition = 0.05
 dof_blur_near_amount = 0.13
 dof_blur_near_quality = 0
-glow_enabled = true
 glow_levels/2 = true
 glow_levels/7 = true
 glow_strength = 0.75

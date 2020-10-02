@@ -1,8 +1,10 @@
-[gd_scene load_steps=98 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://levels/NavMeshCollisionParser.gd" type="Script" id=1]
 
 [sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -7.65, 0.25, -22.45, -6.25, 0.25, -22.45, -6.05, 0.25, -23.25, -7.85, 0.25, -23.25, -6.05, 0.25, -23.25, -3.25, 0.25, -27.65, -10.65, 0.25, -27.65, -7.85, 0.25, -23.25, -6.05, 0.25, -23.25, -3.25, 0.25, -23.25, -3.25, 0.25, -27.65, -10.65, 0.25, -27.65, -10.65, 0.25, -23.25, -7.85, 0.25, -23.25, -3.25, 0.25, -21.65, -3.25, 0.25, -20.25, -1.85, 0.25, -20.25, -1.65, 0.25, -21.85, 0.15, 0.25, -19.25, 1.75, 0.25, -19.05, 2.75, 0.25, -19.25, 2.75, 0.25, -23.65, -1.65, 0.25, -23.65, -1.65, 0.25, -21.85, 0.349998, 0.25, -17.65, 1.75, 0.25, -17.65, 1.75, 0.25, -19.05, 0.15, 0.25, -19.25, -1.85, 0.25, -20.25, -1.65, 0.25, -19.25, 0.15, 0.25, -19.25, -1.65, 0.25, -21.85, -15.65, 0.25, -19.85, -16.05, 0.25, -19.65, -15.85, 0.25, -18.25, -11.25, 0.25, -18.25, -11.25, 0.25, -20.05, -9.45, 0.25, -20.25, -9.45, 0.25, -21.65, -11.05, 0.25, -21.65, -11.25, 0.25, -20.05, -11.25, 0.25, -20.05, -11.05, 0.25, -21.65, -11.25, 0.25, -22.65, -15.65, 0.25, -22.65, -15.65, 0.25, -19.85, -6.05, 0.25, -21.65, -6.25, 0.25, -22.45, -7.65, 0.25, -22.45, -7.85, 0.25, -21.65, -7.85, 0.25, -20.25, -6.25, 0.25, -20.05, -4.25, 0.25, -15.25, -4.25, 0.25, -18.65, -6.05, 0.25, -18.65, -9.45, 0.25, -21.65, -9.45, 0.25, -20.25, -7.85, 0.25, -20.25, -7.85, 0.25, -21.65, -7.65, 0.25, -18.85, -6.05, 0.25, -18.65, -6.25, 0.25, -20.05, -7.85, 0.25, -20.25, -6.05, 0.25, -18.65, -7.65, 0.25, -18.85, -9.65, 0.25, -18.65, -9.65, 0.25, -15.25, -4.25, 0.25, -15.25, -3.25, 0.25, -20.25, -3.25, 0.25, -21.65, -6.05, 0.25, -21.65, -6.25, 0.25, -20.05, -23.05, 0.25, -3.25, -21.45, 0.25, -3.25, -21.45, 0.25, -4.65, -23.25, 0.25, -4.85, -24.65, 0.25, -3.25, -23.25, 0.25, -4.85, -23.25, 0.25, -9.05, -24.65, 0.25, -11.45, -24.65, 0.25, -3.25, -23.05, 0.25, -3.25, -23.25, 0.25, -4.85, -23.25, 0.25, -9.05, -21.65, 0.25, -9.25, -21.65, 0.25, -10.65, -23.25, 0.25, -10.85, -23.25, 0.25, -18.05, -24.65, 0.25, -19.65, -24.65, 0.25, -11.45, -23.25, 0.25, -10.85, -23.25, 0.25, -18.05, -17.85, 0.25, -18.25, -17.65, 0.25, -19.65, -24.65, 0.25, -19.65, -24.65, 0.25, -11.45, -23.25, 0.25, -9.05, -23.25, 0.25, -10.85, -16.25, 0.25, -18.05, -15.85, 0.25, -18.25, -16.05, 0.25, -19.65, -17.65, 0.25, -19.65, -17.85, 0.25, -18.25, -15.45, 0.25, -9.25, -15.45, 0.25, -10.65, -16.25, 0.25, -10.85, -17.65, 0.25, -10.85, -21.65, 0.25, -10.65, -21.65, 0.25, -9.25, -17.65, 0.25, -10.85, -16.25, 0.25, -10.85, -16.25, 0.25, -18.05, -17.85, 0.25, -18.25, 0.349998, 0.25, -11.05, 0.349998, 0.25, -9.45, 1.75, 0.25, -9.45, -1.05, 0.25, -12.65, -1.25, 0.25, -13.65, -5.65, 0.25, -13.65, -5.65, 0.25, -9.25, -1.25, 0.25, -9.25, -1.05, 0.25, -11.25, 1.75, 0.25, -17.65, 0.349998, 0.25, -17.65, 0.349998, 0.25, -12.85, 1.75, 0.25, -9.45, 0.349998, 0.25, -12.85, -1.05, 0.25, -12.65, -1.05, 0.25, -11.25, 0.349998, 0.25, -11.05, 0.349998, 0.25, -11.05, 1.75, 0.25, -9.45, 0.349998, 0.25, -12.85, -14.65, 0.25, -10.85, -15.45, 0.25, -10.65, -15.45, 0.25, -9.25, -9.25, 0.25, -9.25, -9.25, 0.25, -12.65, -14.65, 0.25, -12.65, -14.65, 0.25, -10.85, -9.25, 0.25, -9.25, 1.95, 0.25, -7.65, 1.75, 0.25, -9.45, 0.349998, 0.25, -9.45, 0.15, 0.25, -7.65, 4.75, 0.25, 1.75, 1.95, 0.25, -7.65, 0.15, 0.25, -7.65, -3.05, 0.25, 1.75, -4.65, 0.25, -7.65, -4.65, 0.25, 1.75, -3.05, 0.25, 1.75, 0.15, 0.25, -7.65, 4.75, 0.25, 1.75, 4.75, 0.25, -7.65, 1.95, 0.25, -7.65, -21.45, 0.25, -4.65, -21.45, 0.25, -3.25, -19.85, 0.25, -3.25, -19.65, 0.25, -4.85, -10.25, 0.25, -7.65, -19.65, 0.25, -7.65, -19.65, 0.25, -4.85, -10.25, 0.25, -2.25, -19.65, 0.25, -4.85, -19.85, 0.25, -3.25, -19.65, 0.25, -2.25, -10.25, 0.25, -2.25, -23.05, 0.25, 0.349998, -23.05, 0.25, -3.25, -24.65, 0.25, -3.25, -24.65, 0.25, 1.75, -12.65, 0.25, 0.349998, -23.05, 0.25, 0.349998, -18.65, 0.25, 1.75, -12.65, 0.25, 1.95, -23.05, 0.25, 0.349998, -24.65, 0.25, 1.75, -18.65, 0.25, 1.75, -3.05, 0.25, 1.75, -4.65, 0.25, 1.75, -4.85, 0.25, 2.35, -3.25, 0.25, 3.75, -8.25, 0.25, 4.75, -8.05, 0.25, 3.75, -8.05, 0.25, 2.35, -8.25, 0.25, 0.349998, -12.65, 0.25, 1.95, -12.65, 0.25, 4.75, -8.05, 0.25, 3.75, -3.25, 0.25, 3.75, -4.85, 0.25, 2.35, -8.05, 0.25, 2.35, -8.25, 0.25, 0.349998, -12.65, 0.25, 0.349998, -12.65, 0.25, 1.95 )
+polygons = [ PoolIntArray( 0, 3, 1 ), PoolIntArray( 1, 3, 2 ), PoolIntArray( 7, 6, 4 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 10, 9, 8 ), PoolIntArray( 13, 12, 11 ), PoolIntArray( 15, 14, 16 ), PoolIntArray( 16, 14, 17 ), PoolIntArray( 19, 18, 20 ), PoolIntArray( 20, 18, 23 ), PoolIntArray( 20, 23, 22 ), PoolIntArray( 20, 22, 21 ), PoolIntArray( 25, 24, 26 ), PoolIntArray( 26, 24, 27 ), PoolIntArray( 29, 28, 30 ), PoolIntArray( 30, 28, 31 ), PoolIntArray( 33, 32, 34 ), PoolIntArray( 34, 32, 35 ), PoolIntArray( 35, 32, 36 ), PoolIntArray( 38, 37, 39 ), PoolIntArray( 39, 37, 40 ), PoolIntArray( 42, 41, 43 ), PoolIntArray( 43, 41, 44 ), PoolIntArray( 44, 41, 45 ), PoolIntArray( 47, 46, 48 ), PoolIntArray( 48, 46, 49 ), PoolIntArray( 49, 46, 50 ), PoolIntArray( 50, 46, 51 ), PoolIntArray( 54, 53, 52 ), PoolIntArray( 58, 57, 55 ), PoolIntArray( 55, 57, 56 ), PoolIntArray( 62, 61, 59 ), PoolIntArray( 59, 61, 60 ), PoolIntArray( 64, 63, 65 ), PoolIntArray( 65, 63, 66 ), PoolIntArray( 66, 63, 67 ), PoolIntArray( 69, 68, 70 ), PoolIntArray( 70, 68, 71 ), PoolIntArray( 73, 72, 74 ), PoolIntArray( 74, 72, 75 ), PoolIntArray( 77, 76, 78 ), PoolIntArray( 78, 76, 79 ), PoolIntArray( 82, 81, 80 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 90, 89, 87 ), PoolIntArray( 87, 89, 88 ), PoolIntArray( 92, 91, 93 ), PoolIntArray( 93, 91, 94 ), PoolIntArray( 96, 95, 97 ), PoolIntArray( 99, 98, 100 ), PoolIntArray( 100, 98, 101 ), PoolIntArray( 101, 98, 102 ), PoolIntArray( 104, 103, 105 ), PoolIntArray( 105, 103, 106 ), PoolIntArray( 106, 103, 107 ), PoolIntArray( 107, 103, 108 ), PoolIntArray( 110, 109, 111 ), PoolIntArray( 111, 109, 112 ), PoolIntArray( 115, 114, 113 ), PoolIntArray( 116, 121, 117 ), PoolIntArray( 117, 121, 120 ), PoolIntArray( 117, 120, 119 ), PoolIntArray( 117, 119, 118 ), PoolIntArray( 123, 122, 124 ), PoolIntArray( 124, 122, 125 ), PoolIntArray( 128, 127, 129 ), PoolIntArray( 129, 127, 126 ), PoolIntArray( 132, 131, 130 ), PoolIntArray( 134, 133, 135 ), PoolIntArray( 135, 133, 136 ), PoolIntArray( 138, 137, 139 ), PoolIntArray( 139, 137, 140 ), PoolIntArray( 142, 141, 143 ), PoolIntArray( 143, 141, 144 ), PoolIntArray( 146, 145, 147 ), PoolIntArray( 147, 145, 148 ), PoolIntArray( 150, 149, 151 ), PoolIntArray( 151, 149, 152 ), PoolIntArray( 155, 154, 153 ), PoolIntArray( 157, 156, 158 ), PoolIntArray( 158, 156, 159 ), PoolIntArray( 161, 160, 162 ), PoolIntArray( 162, 160, 163 ), PoolIntArray( 165, 164, 166 ), PoolIntArray( 166, 164, 167 ), PoolIntArray( 169, 168, 170 ), PoolIntArray( 170, 168, 171 ), PoolIntArray( 175, 174, 172 ), PoolIntArray( 172, 174, 173 ), PoolIntArray( 178, 177, 176 ), PoolIntArray( 180, 179, 181 ), PoolIntArray( 181, 179, 182 ), PoolIntArray( 184, 183, 185 ), PoolIntArray( 185, 183, 186 ), PoolIntArray( 186, 183, 187 ), PoolIntArray( 187, 183, 188 ), PoolIntArray( 192, 191, 189 ), PoolIntArray( 189, 191, 190 ), PoolIntArray( 195, 194, 193 ) ]
 cell/size = 0.2
 cell/height = 0.1
 agent/height = 1.0
@@ -13,128 +15,158 @@ filter/ledge_spans = true
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 10, 0.1, 10 )
 
-[sub_resource type="CubeMesh" id=3]
-size = Vector3( 10, 0.1, 6 )
+[sub_resource type="OpenSimplexNoise" id=99]
+octaves = 6
+period = 0.1
+persistence = 1.0
+lacunarity = 4.0
 
-[sub_resource type="CubeMesh" id=4]
-size = Vector3( 2, 0.1, 11 )
+[sub_resource type="NoiseTexture" id=100]
+flags = 34
+width = 64
+seamless = true
+noise = SubResource( 99 )
 
-[sub_resource type="CubeMesh" id=5]
-size = Vector3( 2, 0.1, 9 )
+[sub_resource type="SpatialMaterial" id=101]
+params_diffuse_mode = 4
+albedo_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+albedo_texture = SubResource( 100 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
 
 [sub_resource type="CubeMesh" id=6]
-size = Vector3( 2, 0.1, 9 )
+size = Vector3( 10, 0.1, 6 )
 
 [sub_resource type="CubeMesh" id=7]
-size = Vector3( 2, 0.1, 8 )
+size = Vector3( 2, 0.1, 11 )
 
 [sub_resource type="CubeMesh" id=8]
-size = Vector3( 2, 0.1, 3 )
+size = Vector3( 2, 0.1, 9 )
 
 [sub_resource type="CubeMesh" id=9]
 size = Vector3( 2, 0.1, 9 )
 
 [sub_resource type="CubeMesh" id=10]
-size = Vector3( 2, 0.1, 9 )
+size = Vector3( 2, 0.1, 8 )
 
 [sub_resource type="CubeMesh" id=11]
-size = Vector3( 2, 0.1, 12 )
+size = Vector3( 2, 0.1, 3 )
 
 [sub_resource type="CubeMesh" id=12]
-size = Vector3( 2, 0.1, 7 )
+size = Vector3( 2, 0.1, 9 )
 
 [sub_resource type="CubeMesh" id=13]
-size = Vector3( 1, 0.1, 2 )
+size = Vector3( 2, 0.1, 9 )
 
 [sub_resource type="CubeMesh" id=14]
-size = Vector3( 2, 0.1, 1 )
+size = Vector3( 2, 0.1, 12 )
 
 [sub_resource type="CubeMesh" id=15]
-size = Vector3( 2, 0.1, 1 )
+size = Vector3( 2, 0.1, 7 )
 
 [sub_resource type="CubeMesh" id=16]
-size = Vector3( 5, 0.1, 5 )
+size = Vector3( 1, 0.1, 2 )
 
 [sub_resource type="CubeMesh" id=17]
-size = Vector3( 5, 0.1, 2 )
+size = Vector3( 2, 0.1, 1 )
 
 [sub_resource type="CubeMesh" id=18]
-size = Vector3( 5, 0.1, 5 )
+size = Vector3( 2, 0.1, 1 )
 
 [sub_resource type="CubeMesh" id=19]
 size = Vector3( 5, 0.1, 5 )
 
 [sub_resource type="CubeMesh" id=20]
-size = Vector3( 8, 0.1, 5 )
+size = Vector3( 5, 0.1, 2 )
 
 [sub_resource type="CubeMesh" id=21]
-size = Vector3( 6, 0.1, 4 )
+size = Vector3( 5, 0.1, 5 )
 
 [sub_resource type="CubeMesh" id=22]
-size = Vector3( 6, 0.1, 4 )
+size = Vector3( 5, 0.1, 5 )
 
 [sub_resource type="CubeMesh" id=23]
-size = Vector3( 8, 4, 0.1 )
+size = Vector3( 8, 0.1, 5 )
 
 [sub_resource type="CubeMesh" id=24]
-size = Vector3( 12, 4, 0.1 )
+size = Vector3( 6, 0.1, 4 )
 
 [sub_resource type="CubeMesh" id=25]
-size = Vector3( 10, 4, 0.1 )
+size = Vector3( 6, 0.1, 4 )
 
 [sub_resource type="CubeMesh" id=26]
-size = Vector3( 6, 4, 0.1 )
+size = Vector3( 8, 4, 0.1 )
+
+[sub_resource type="OpenSimplexNoise" id=104]
+seed = 7
+octaves = 1
+period = 3.0
+persistence = 0.0
+lacunarity = 0.1
+
+[sub_resource type="NoiseTexture" id=105]
+flags = 35
+width = 3
+height = 2
+noise = SubResource( 104 )
+
+[sub_resource type="SpatialMaterial" id=5]
+params_diffuse_mode = 4
+albedo_color = Color( 0.25098, 0.25098, 0.25098, 1 )
+albedo_texture = SubResource( 105 )
+uv1_scale = Vector3( 10, 1, 10 )
+uv1_triplanar = true
 
 [sub_resource type="CubeMesh" id=27]
-size = Vector3( 6, 4, 0.1 )
+size = Vector3( 12, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=28]
 size = Vector3( 10, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=29]
-size = Vector3( 14, 4, 0.1 )
+size = Vector3( 6, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=30]
-size = Vector3( 9, 4, 0.1 )
+size = Vector3( 6, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=31]
-size = Vector3( 15, 4, 0.1 )
+size = Vector3( 10, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=32]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 14, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=33]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 9, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=34]
-size = Vector3( 7, 4, 0.1 )
+size = Vector3( 15, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=35]
-size = Vector3( 7, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=36]
-size = Vector3( 7, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=37]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 7, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=38]
-size = Vector3( 8, 4, 0.1 )
+size = Vector3( 7, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=39]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 7, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=40]
-size = Vector3( 8, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=41]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 8, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=42]
 size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=43]
-size = Vector3( 5, 4, 0.1 )
+size = Vector3( 8, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=44]
 size = Vector3( 5, 4, 0.1 )
@@ -152,19 +184,19 @@ size = Vector3( 5, 4, 0.1 )
 size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=49]
-size = Vector3( 3, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=50]
-size = Vector3( 11, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=51]
-size = Vector3( 3, 4, 0.1 )
+size = Vector3( 5, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=52]
 size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=53]
-size = Vector3( 6, 4, 0.1 )
+size = Vector3( 11, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=54]
 size = Vector3( 3, 4, 0.1 )
@@ -173,16 +205,16 @@ size = Vector3( 3, 4, 0.1 )
 size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=56]
-size = Vector3( 3, 4, 0.1 )
+size = Vector3( 6, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=57]
 size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=58]
-size = Vector3( 4, 4, 0.1 )
+size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=59]
-size = Vector3( 4, 4, 0.1 )
+size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=60]
 size = Vector3( 3, 4, 0.1 )
@@ -191,19 +223,19 @@ size = Vector3( 3, 4, 0.1 )
 size = Vector3( 4, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=62]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 4, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=63]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=64]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 4, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=65]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=66]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=67]
 size = Vector3( 1, 4, 0.1 )
@@ -215,40 +247,40 @@ size = Vector3( 1, 4, 0.1 )
 size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=70]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=71]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=72]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=73]
-size = Vector3( 10, 4, 0.1 )
+size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=74]
-size = Vector3( 10, 4, 0.1 )
+size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=75]
-size = Vector3( 3, 4, 0.1 )
+size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=76]
-size = Vector3( 4, 4, 0.1 )
+size = Vector3( 10, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=77]
-size = Vector3( 6, 4, 0.1 )
+size = Vector3( 10, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=78]
-size = Vector3( 22, 4, 0.1 )
+size = Vector3( 3, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=79]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 4, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=80]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 6, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=81]
-size = Vector3( 1, 4, 0.1 )
+size = Vector3( 22, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=82]
 size = Vector3( 1, 4, 0.1 )
@@ -257,13 +289,13 @@ size = Vector3( 1, 4, 0.1 )
 size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=84]
-size = Vector3( 3, 4, 0.1 )
+size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=85]
 size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=86]
-size = Vector3( 2, 4, 0.1 )
+size = Vector3( 1, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=87]
 size = Vector3( 3, 4, 0.1 )
@@ -275,25 +307,49 @@ size = Vector3( 1, 4, 0.1 )
 size = Vector3( 2, 4, 0.1 )
 
 [sub_resource type="CubeMesh" id=90]
-size = Vector3( 2, 4, 0.1 )
-
-[sub_resource type="CubeMesh" id=91]
-size = Vector3( 2, 4, 0.1 )
-
-[sub_resource type="CubeMesh" id=92]
-size = Vector3( 4, 4, 0.1 )
-
-[sub_resource type="CubeMesh" id=93]
-size = Vector3( 4, 4, 0.1 )
-
-[sub_resource type="CubeMesh" id=94]
 size = Vector3( 3, 4, 0.1 )
 
+[sub_resource type="CubeMesh" id=91]
+size = Vector3( 1, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=92]
+size = Vector3( 2, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=93]
+size = Vector3( 2, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=94]
+size = Vector3( 2, 4, 0.1 )
+
 [sub_resource type="CubeMesh" id=95]
+size = Vector3( 4, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=96]
+size = Vector3( 4, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=97]
+size = Vector3( 3, 4, 0.1 )
+
+[sub_resource type="CubeMesh" id=98]
 size = Vector3( 5, 4, 0.1 )
 
-[sub_resource type="Environment" id=96]
-background_mode = 1
+[sub_resource type="ProceduralSky" id=102]
+
+[sub_resource type="Environment" id=103]
+background_mode = 2
+background_sky = SubResource( 102 )
+
+[sub_resource type="SpatialMaterial" id=106]
+albedo_color = Color( 0, 0, 0, 1 )
+emission_enabled = true
+emission = Color( 0, 1, 0.882353, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=107]
+material = SubResource( 106 )
+size = Vector3( 0.2, 0.01, 0.05 )
 
 [node name="Navigation" type="Navigation"]
 
@@ -301,677 +357,864 @@ background_mode = 1
 navmesh = SubResource( 1 )
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor22" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3 )
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance10" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor21" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5 )
-mesh = SubResource( 3 )
-material/0 = null
+mesh = SubResource( 6 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor20" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -13.5 )
-mesh = SubResource( 4 )
-material/0 = null
+mesh = SubResource( 7 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance13" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor19" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.5, 0, -21 )
-mesh = SubResource( 5 )
-material/0 = null
+mesh = SubResource( 8 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance16" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor18" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 0, -19 )
-mesh = SubResource( 6 )
-material/0 = null
+mesh = SubResource( 9 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance17" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor17" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 0, -10 )
-mesh = SubResource( 7 )
-material/0 = null
+mesh = SubResource( 10 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance21" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor16" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.5, 0, -4 )
-mesh = SubResource( 8 )
-material/0 = null
+mesh = SubResource( 11 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance18" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor15" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -13.5 )
-mesh = SubResource( 9 )
-material/0 = null
+mesh = SubResource( 12 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance20" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor14" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -4.5 )
-mesh = SubResource( 10 )
-material/0 = null
+mesh = SubResource( 13 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance22" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor13" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19, 0, 1 )
-mesh = SubResource( 11 )
-material/0 = null
+mesh = SubResource( 14 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance19" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor12" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -14.5 )
-mesh = SubResource( 12 )
-material/0 = null
+mesh = SubResource( 15 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor11" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -12 )
-mesh = SubResource( 13 )
-material/0 = null
+mesh = SubResource( 16 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance14" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor10" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -22.5 )
-mesh = SubResource( 14 )
-material/0 = null
+mesh = SubResource( 17 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance15" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor9" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -19.5 )
-mesh = SubResource( 15 )
-material/0 = null
+mesh = SubResource( 18 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance4" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor8" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -11.5 )
-mesh = SubResource( 16 )
-material/0 = null
+mesh = SubResource( 19 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance11" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor7" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 2.5 )
-mesh = SubResource( 16 )
-material/0 = null
+mesh = SubResource( 19 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance12" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor6" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 3 )
-mesh = SubResource( 17 )
-material/0 = null
+mesh = SubResource( 20 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance5" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor5" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -21.5 )
-mesh = SubResource( 18 )
-material/0 = null
+mesh = SubResource( 21 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance6" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor4" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0, -20.5 )
-mesh = SubResource( 19 )
-material/0 = null
+mesh = SubResource( 22 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance7" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor3" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -25.5 )
-mesh = SubResource( 20 )
-material/0 = null
+mesh = SubResource( 23 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance8" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor2" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17 )
-mesh = SubResource( 21 )
-material/0 = null
+mesh = SubResource( 24 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance9" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="floor" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -11 )
-mesh = SubResource( 22 )
-material/0 = null
+mesh = SubResource( 25 )
+material/0 = SubResource( 101 )
 
-[node name="MeshInstance23" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall73" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 2 )
-mesh = SubResource( 23 )
-material/0 = null
+mesh = SubResource( 26 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance26" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall72" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 2, 2 )
-mesh = SubResource( 24 )
-material/0 = null
+mesh = SubResource( 27 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance36" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall71" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, -2 )
-mesh = SubResource( 25 )
-material/0 = null
+mesh = SubResource( 28 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance39" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall70" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -13 )
-mesh = SubResource( 26 )
-material/0 = null
+mesh = SubResource( 29 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance53" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall69" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, -15 )
-mesh = SubResource( 27 )
-material/0 = null
+mesh = SubResource( 30 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance37" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall68" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, -8 )
-mesh = SubResource( 28 )
-material/0 = null
+mesh = SubResource( 31 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance38" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall67" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2, -9 )
-mesh = SubResource( 29 )
-material/0 = null
+mesh = SubResource( 32 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance67" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall66" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 2, -20 )
-mesh = SubResource( 30 )
-material/0 = null
+mesh = SubResource( 33 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance28" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall65" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 2, 0 )
-mesh = SubResource( 31 )
-material/0 = null
+mesh = SubResource( 34 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance24" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall64" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2, 4 )
-mesh = SubResource( 32 )
-material/0 = null
+mesh = SubResource( 35 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance41" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall63" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 2, -11 )
-mesh = SubResource( 33 )
-material/0 = null
+mesh = SubResource( 36 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance73" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall62" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 2, -14.5 )
-mesh = SubResource( 34 )
-material/0 = null
+mesh = SubResource( 37 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance78" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall61" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 2, -14.5 )
-mesh = SubResource( 35 )
-material/0 = null
+mesh = SubResource( 38 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance74" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall60" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 2, -14.5 )
-mesh = SubResource( 36 )
-material/0 = null
+mesh = SubResource( 39 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance43" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall59" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 2, -18 )
-mesh = SubResource( 37 )
-material/0 = null
+mesh = SubResource( 40 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance44" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall58" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 2, -23 )
-mesh = SubResource( 38 )
-material/0 = null
+mesh = SubResource( 41 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance45" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall57" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 2, -25.5 )
-mesh = SubResource( 39 )
-material/0 = null
+mesh = SubResource( 42 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance69" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall56" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7, 2, -28 )
-mesh = SubResource( 40 )
-material/0 = null
+mesh = SubResource( 43 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance68" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall55" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11, 2, -25.5 )
-mesh = SubResource( 41 )
-material/0 = null
+mesh = SubResource( 44 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance49" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall54" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 2, -11.5 )
-mesh = SubResource( 42 )
-material/0 = null
+mesh = SubResource( 45 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance42" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall53" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 2, -18 )
-mesh = SubResource( 43 )
-material/0 = null
+mesh = SubResource( 46 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance46" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall52" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, -24 )
-mesh = SubResource( 44 )
-material/0 = null
+mesh = SubResource( 47 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance56" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall51" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 2, -21.5 )
-mesh = SubResource( 45 )
-material/0 = null
+mesh = SubResource( 48 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance47" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall50" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2, -14 )
-mesh = SubResource( 46 )
-material/0 = null
+mesh = SubResource( 49 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance48" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall49" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2, -9 )
-mesh = SubResource( 47 )
-material/0 = null
+mesh = SubResource( 50 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance90" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall48" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, -8 )
-mesh = SubResource( 48 )
-material/0 = null
+mesh = SubResource( 51 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance91" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall47" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2, -8 )
-mesh = SubResource( 49 )
-material/0 = null
+mesh = SubResource( 52 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance92" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall46" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2, 2, -13.5 )
-mesh = SubResource( 50 )
-material/0 = null
+mesh = SubResource( 53 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance27" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall45" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2, 2 )
-mesh = SubResource( 51 )
-material/0 = null
+mesh = SubResource( 54 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance40" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall44" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2, -9.5 )
-mesh = SubResource( 52 )
-material/0 = null
+mesh = SubResource( 55 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance93" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall43" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2, -16 )
-mesh = SubResource( 53 )
-material/0 = null
+mesh = SubResource( 56 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance29" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall42" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 2, -3 )
-mesh = SubResource( 54 )
-material/0 = null
+mesh = SubResource( 57 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance30" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall41" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 2, -5 )
-mesh = SubResource( 55 )
-material/0 = null
+mesh = SubResource( 58 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance31" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall40" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2, -20 )
-mesh = SubResource( 56 )
-material/0 = null
+mesh = SubResource( 59 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance32" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall39" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 2, -22 )
-mesh = SubResource( 57 )
-material/0 = null
+mesh = SubResource( 60 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance33" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall38" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 2, -17 )
-mesh = SubResource( 58 )
-material/0 = null
+mesh = SubResource( 61 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance75" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall37" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -23, 2, -7 )
-mesh = SubResource( 59 )
-material/0 = null
+mesh = SubResource( 62 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance82" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall36" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 2, -6.5 )
-mesh = SubResource( 60 )
-material/0 = null
+mesh = SubResource( 63 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance50" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall35" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 2, -17 )
-mesh = SubResource( 61 )
-material/0 = null
+mesh = SubResource( 64 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance51" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall34" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -19 )
-mesh = SubResource( 62 )
-material/0 = null
+mesh = SubResource( 65 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance54" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall33" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -19 )
-mesh = SubResource( 63 )
-material/0 = null
+mesh = SubResource( 66 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance57" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall32" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2, -19 )
-mesh = SubResource( 64 )
-material/0 = null
+mesh = SubResource( 67 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance72" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall31" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 2, -19.5 )
-mesh = SubResource( 65 )
-material/0 = null
+mesh = SubResource( 68 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance58" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall30" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -13 )
-mesh = SubResource( 66 )
-material/0 = null
+mesh = SubResource( 69 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance94" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall29" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 2, -13.5 )
-mesh = SubResource( 67 )
-material/0 = null
+mesh = SubResource( 70 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance59" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall28" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -11 )
-mesh = SubResource( 68 )
-material/0 = null
+mesh = SubResource( 71 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance60" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall27" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 2, -11 )
-mesh = SubResource( 69 )
-material/0 = null
+mesh = SubResource( 72 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance79" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall26" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 2, -12 )
-mesh = SubResource( 70 )
-material/0 = null
+mesh = SubResource( 73 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance84" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall25" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, 1 )
-mesh = SubResource( 71 )
-material/0 = null
+mesh = SubResource( 74 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance87" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall24" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 2, 3 )
-mesh = SubResource( 72 )
-material/0 = null
+mesh = SubResource( 75 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance88" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall23" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 2, -3 )
-mesh = SubResource( 73 )
-material/0 = null
+mesh = SubResource( 76 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance89" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall22" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 2, -3 )
-mesh = SubResource( 74 )
-material/0 = null
+mesh = SubResource( 77 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance86" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall21" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13, 2, 3.5 )
-mesh = SubResource( 75 )
-material/0 = null
+mesh = SubResource( 78 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance80" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall20" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9, 2, -11 )
-mesh = SubResource( 76 )
-material/0 = null
+mesh = SubResource( 79 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance81" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall19" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 2, -5 )
-mesh = SubResource( 77 )
-material/0 = null
+mesh = SubResource( 80 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance85" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall18" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 2, -9 )
-mesh = SubResource( 78 )
-material/0 = null
+mesh = SubResource( 81 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance61" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall17" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -19.5 )
-mesh = SubResource( 79 )
-material/0 = null
+mesh = SubResource( 82 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance62" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall16" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 2, -19.5 )
-mesh = SubResource( 80 )
-material/0 = null
+mesh = SubResource( 83 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance63" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall15" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -22.5 )
-mesh = SubResource( 81 )
-material/0 = null
+mesh = SubResource( 84 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance65" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall14" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 2, -22.5 )
-mesh = SubResource( 82 )
-material/0 = null
+mesh = SubResource( 85 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance76" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall13" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 2, -2.5 )
-mesh = SubResource( 83 )
-material/0 = null
+mesh = SubResource( 86 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance83" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall12" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23, 2, -1.5 )
-mesh = SubResource( 84 )
-material/0 = null
+mesh = SubResource( 87 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance77" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall11" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, 4.5 )
-mesh = SubResource( 85 )
-material/0 = null
+mesh = SubResource( 88 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance66" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall10" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 2, -19 )
-mesh = SubResource( 86 )
-material/0 = null
+mesh = SubResource( 89 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance70" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall9" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 2, -21.5 )
-mesh = SubResource( 87 )
-material/0 = null
+mesh = SubResource( 90 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance64" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall8" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 2, -22.5 )
-mesh = SubResource( 88 )
-material/0 = null
+mesh = SubResource( 91 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance55" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall7" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2, -23 )
-mesh = SubResource( 89 )
-material/0 = null
+mesh = SubResource( 92 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance95" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall6" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 2, -10 )
-mesh = SubResource( 90 )
-material/0 = null
+mesh = SubResource( 93 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance52" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall5" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, -19 )
-mesh = SubResource( 91 )
-material/0 = null
+mesh = SubResource( 94 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance35" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall4" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -22 )
-mesh = SubResource( 92 )
-material/0 = null
+mesh = SubResource( 95 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance71" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall3" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, -20 )
-mesh = SubResource( 93 )
-material/0 = null
+mesh = SubResource( 96 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance34" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall2" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2, -23 )
-mesh = SubResource( 94 )
-material/0 = null
+mesh = SubResource( 97 )
+material/0 = SubResource( 5 )
 
-[node name="MeshInstance25" type="MeshInstance" parent="NavigationMeshInstance" groups=[
+[node name="wall" type="MeshInstance" parent="NavigationMeshInstance" groups=[
 "RigidMapMesh",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 2, 5 )
-mesh = SubResource( 95 )
-material/0 = null
-
-[node name="OmniLight" type="OmniLight" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -3 )
-light_energy = 0.4
-light_indirect_energy = 0.0
-shadow_enabled = true
-omni_range = 25.0
+mesh = SubResource( 98 )
+material/0 = SubResource( 5 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 96 )
+environment = SubResource( 103 )
+
+[node name="flooraccentlight" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0542686, 0.153753, -10.9425 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight2" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0542686, 0.153753, -8.05854 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight3" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0542686, 0.153753, -13.005 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight4" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0542686, 0.153753, -18.9288 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight5" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.94699, 0.153753, -10.9425 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight6" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.94699, 0.153753, -8.05854 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight7" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.94699, 0.153753, -13.005 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="flooraccentlight8" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 1.94699, 0.153753, -18.9288 )
+mesh = SubResource( 107 )
+material/0 = null
+
+[node name="ceiling22" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -3 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling21" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 4, -5 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling20" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, -13.5 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling19" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.5, 4, -21 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling18" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 4, -19 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling17" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19, 4, -10 )
+mesh = SubResource( 10 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling16" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.5, 4, -4 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling15" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 4, -13.5 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling14" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 4, -4.5 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling13" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19, 4, 1 )
+mesh = SubResource( 14 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling12" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 4, -14.5 )
+mesh = SubResource( 15 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling11" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4, -12 )
+mesh = SubResource( 16 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling10" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -22.5 )
+mesh = SubResource( 17 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling9" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -19.5 )
+mesh = SubResource( 18 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling8" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4, -11.5 )
+mesh = SubResource( 19 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling7" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 4, 2.5 )
+mesh = SubResource( 19 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling6" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 4, 3 )
+mesh = SubResource( 20 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling5" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4, -21.5 )
+mesh = SubResource( 21 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling4" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 4, -20.5 )
+mesh = SubResource( 22 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling3" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -25.5 )
+mesh = SubResource( 23 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling2" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -17 )
+mesh = SubResource( 24 )
+material/0 = SubResource( 101 )
+
+[node name="ceiling" type="MeshInstance" parent="." groups=[
+"RigidMapMesh",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 4, -11 )
+mesh = SubResource( 25 )
+material/0 = SubResource( 101 )

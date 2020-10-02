@@ -3,10 +3,10 @@
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.3, 0.05, 0.05 )
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( -0.15, 0.025, 0.025, 0.15, 0.025, -0.025, 0.15, 0.025, 0.025, -0.15, 0.025, -0.025, -0.15, -0.025, 0.025, 0.15, -0.025, -0.025, 0.15, -0.025, 0.025, -0.15, -0.025, -0.025, 0.15, 0.025, 0.025, -0.15, 0.025, -0.025, 0.15, 0.025, -0.025, -0.15, 0.025, 0.025, 0.15, -0.025, 0.025, -0.15, -0.025, -0.025, 0.15, -0.025, -0.025, -0.15, -0.025, 0.025, 0.15, 0.025, 0.025, -0.15, -0.025, 0.025, -0.15, 0.025, 0.025, 0.15, -0.025, 0.025, 0.15, 0.025, -0.025, -0.15, -0.025, -0.025, -0.15, 0.025, -0.025, 0.15, -0.025, -0.025 )
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=3]
 top_radius = 0.001
 bottom_radius = 0.1
 height = 0.1
@@ -17,6 +17,7 @@ points = PoolVector3Array( -0.0984011, -0.0497441, -0.0156425, -0.0984014, -0.04
 [node name="flashlight" type="RigidBody" groups=[
 "grabbable",
 ]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.415519, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0 )
@@ -25,11 +26,11 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -0.225834, 0, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="CollisionShape2" type="CollisionShape" parent="."]
@@ -37,8 +38,8 @@ transform = Transform( 4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.8213
 shape = SubResource( 4 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.388808, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.410052, 0, 0 )
 shadow_enabled = true
-spot_range = 20.0
-spot_attenuation = 2.07053
+spot_range = 15.1
+spot_attenuation = 2.82843
 spot_angle = 60.0

@@ -1,4 +1,4 @@
-extends NavigationMeshInstance
+extends Spatial
 
 
 onready var rigidmapmeshes = get_tree().get_nodes_in_group("RigidMapMesh")
@@ -10,6 +10,9 @@ func _ready():
 
 		var tmpbody = RigidBody.new()
 		var tmpcollisionshape = CollisionShape.new()
+		i.mesh.subdivide_depth = i.mesh.size.z*4
+		i.mesh.subdivide_height = i.mesh.size.y*4
+		i.mesh.subdivide_width = i.mesh.size.x*4
 		var tmpshape = i.mesh.create_trimesh_shape()
 		tmpshape.margin = 0.001
 		tmpcollisionshape.shape = tmpshape
