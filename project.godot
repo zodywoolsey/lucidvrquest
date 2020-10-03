@@ -44,6 +44,7 @@ common/enable_object_picking=false
 [rendering]
 
 quality/driver/driver_name="GLES2"
+threads/thread_model=2
 vram_compression/import_etc=true
 quality/directional_shadow/size.mobile=256
 quality/reflections/texture_array_reflections=false

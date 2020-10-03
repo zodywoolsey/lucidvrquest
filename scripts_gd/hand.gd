@@ -5,7 +5,7 @@ var handArea
 var handBody
 var handRay
 var uiRay
-var grabShader
+var grabShader = preload('res://handGrabMaterial.tres')
 var handcollider
 
 var grabDown = false
@@ -51,7 +51,6 @@ func _ready():
 	handBody = get_node('HandBody')
 	handRay = handBody.get_node('HandRay')
 	uiRay = handBody.get_node('UiRay')
-	grabShader = load('res://handGrabMaterial.tres')
 	handcollider = handBody.get_node('handcollider')
 
 

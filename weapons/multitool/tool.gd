@@ -6,6 +6,7 @@ var bulletorigin
 var boloc
 var bloc
 
+var bulletscene = preload('res://weapons/multitool/bulletmobile.tscn')
 var bullet
 var t = 0
 
@@ -27,7 +28,7 @@ func _physics_process(delta):
 
 func activate():
 	if t > .2:
-		bullet = load('res://weapons/multitool/bullet.tscn').instance()
+		bullet = bulletscene.instance()
 		bullet.global_transform = bulletloc.global_transform
 		get_tree().root.add_child(bullet)
 		bloc = Vector3(bulletloc.global_transform.origin.x,bulletloc.global_transform.origin.y,bulletloc.global_transform.origin.z)
