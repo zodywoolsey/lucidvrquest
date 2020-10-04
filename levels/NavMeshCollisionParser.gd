@@ -29,7 +29,7 @@ func _ready():
 
 		tmpbody.add_child(AudioStreamPlayer3D.new())
 		i.add_child(tmpbody)
-		tmpbody.connect("body_entered",self,"collisionsound")
+		# tmpbody.connect("body_entered",self,"collisionsound")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,5 +37,5 @@ func _ready():
 #	pass
 
 
-func collisionsound(col):
-	print("collided with: " + col.name)
+# func collisionsound(col):
+# 	print("collided with: " + col.name)

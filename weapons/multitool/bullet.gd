@@ -13,7 +13,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	t += delta
-
 	if t > 20 || ( t > .1 && abs(linear_velocity.x) < 5 && abs(linear_velocity.y) < 5 && abs(linear_velocity.z) < 5):
-		# get_parent.remove_child(self)
-		self.queue_free()
+		queue_free()
+
+func _on_Area_body_entered(collidedbody):
+	if collidedbody.is_in_group('character'):
+		# print("bullet collided")
+		collidedbody.health -= 5
+		queue_free()

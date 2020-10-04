@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scripts_gd/hand.gd" type="Script" id=1]
+[ext_resource path="res://scenes/handaudio.gd" type="Script" id=2]
 [ext_resource path="res://materials/handrayblue.tres" type="Material" id=3]
 [ext_resource path="res://scripts_gd/player.gd" type="Script" id=4]
 [ext_resource path="res://materials/handrayred.tres" type="Material" id=5]
@@ -10,33 +11,30 @@
 radius = 0.2
 height = 0.6
 
-[sub_resource type="SphereShape" id=2]
-radius = 0.15
-
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=2]
 margin = 0.001
 extents = Vector3( 0.03, 0.03, 0.03 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
 size = Vector3( 0.06, 0.06, 0.06 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="AudioStreamGenerator" id=8]
+
+[sub_resource type="BoxShape" id=5]
 margin = 0.001
 extents = Vector3( 0.01, 0.01, 0.01 )
 
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 0.01, 5, 0.01 )
+
 [sub_resource type="CubeMesh" id=7]
-size = Vector3( 0.01, 5, 0.01 )
-
-[sub_resource type="CubeMesh" id=8]
 flip_faces = true
 size = Vector3( 0.01, 5, 0.01 )
 
-[sub_resource type="CubeMesh" id=9]
-flip_faces = true
-size = Vector3( 0.01, 5, 0.01 )
+[sub_resource type="AudioStreamGenerator" id=10]
 
 [node name="rigidplayer" type="KinematicBody"]
 collision_layer = 2
@@ -50,17 +48,10 @@ shape = SubResource( 1 )
 [node name="player" type="ARVROrigin" parent="."]
 
 [node name="ARVRCamera" type="ARVRCamera" parent="player"]
+doppler_tracking = 2
+current = true
 near = 0.01
 far = 8192.0
-
-[node name="KinematicBody" type="KinematicBody" parent="player/ARVRCamera"]
-visible = false
-collision_layer = 2
-collision_mask = 2147483650
-
-[node name="CollisionShape" type="CollisionShape" parent="player/ARVRCamera/KinematicBody"]
-shape = SubResource( 2 )
-disabled = true
 
 [node name="rightHand" type="ARVRController" parent="player"]
 controller_id = 2
@@ -74,20 +65,27 @@ linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="player/rightHand/HandArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="player/rightHand/HandArea/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="HandGrab" type="Generic6DOFJoint" parent="player/rightHand"]
 nodes/node_a = NodePath("../HandBody")
 
-[node name="HandBody" type="KinematicBody" parent="player/rightHand"]
+[node name="handaudio" type="AudioStreamPlayer3D" parent="player/rightHand"]
+stream = SubResource( 8 )
+unit_size = 0.1
+pitch_scale = 10.0
+script = ExtResource( 2 )
+
+[node name="HandBody" type="RigidBody" parent="player/rightHand"]
+mode = 3
 
 [node name="handcollider" type="CollisionShape" parent="player/rightHand/HandBody"]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="HandRay" type="RayCast" parent="player/rightHand/HandBody"]
@@ -98,7 +96,7 @@ cast_to = Vector3( 0, 5, 0 )
 [node name="MeshInstance" type="MeshInstance" parent="player/rightHand/HandBody/HandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 cast_shadow = 0
-mesh = SubResource( 7 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 5 )
 
 [node name="UiRay" type="RayCast" parent="player/rightHand/HandBody"]
@@ -113,7 +111,7 @@ script = ExtResource( 6 )
 [node name="MeshInstance" type="MeshInstance" parent="player/rightHand/HandBody/UiRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 cast_shadow = 0
-mesh = SubResource( 8 )
+mesh = SubResource( 7 )
 material/0 = ExtResource( 3 )
 
 [node name="leftHand" type="ARVRController" parent="player"]
@@ -127,10 +125,10 @@ linear_damp = 0.0
 angular_damp = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="player/leftHand/HandArea"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="player/leftHand/HandArea/CollisionShape"]
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="HandGrab" type="Generic6DOFJoint" parent="player/leftHand"]
@@ -140,12 +138,12 @@ angular_limit_y/erp = 1000.0
 angular_limit_z/erp = 1000.0
 precision = 1000
 
-[node name="HandBody" type="KinematicBody" parent="player/leftHand"]
-collision_layer = 0
-collision_mask = 0
+[node name="HandBody" type="RigidBody" parent="player/leftHand"]
+mode = 3
 
 [node name="handcollider" type="CollisionShape" parent="player/leftHand/HandBody"]
-shape = SubResource( 6 )
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0 )
+shape = SubResource( 5 )
 disabled = true
 
 [node name="HandRay" type="RayCast" parent="player/leftHand/HandBody"]
@@ -155,7 +153,8 @@ cast_to = Vector3( 0, 5, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="player/leftHand/HandBody/HandRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
-mesh = SubResource( 9 )
+cast_shadow = 0
+mesh = SubResource( 6 )
 material/0 = ExtResource( 5 )
 
 [node name="UiRay" type="RayCast" parent="player/leftHand/HandBody"]
@@ -170,8 +169,13 @@ script = ExtResource( 6 )
 [node name="MeshInstance" type="MeshInstance" parent="player/leftHand/HandBody/UiRay"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 cast_shadow = 0
-mesh = SubResource( 8 )
+mesh = SubResource( 7 )
 material/0 = ExtResource( 3 )
+
+[node name="handaudio" type="AudioStreamPlayer3D" parent="player/leftHand"]
+stream = SubResource( 10 )
+stream_paused = true
+script = ExtResource( 2 )
 
 [node name="groundcheck" type="RayCast" parent="."]
 [connection signal="button_pressed" from="player/rightHand" to="player/rightHand" method="_on_Hand_button_pressed"]

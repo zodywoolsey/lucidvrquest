@@ -25,7 +25,7 @@ func _ready():
 			
 	if interface.initialize():
 		get_viewport().size_override_stretch = true
-		print(get_viewport().get_size_override())
+		# print(get_viewport().get_size_override())
 		get_viewport().arvr = true
 		OS.vsync_enabled = false
 		if arServ == 'ovr':

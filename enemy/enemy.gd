@@ -6,12 +6,16 @@ var pathindex = 0
 var move_speed = 2
 onready var nav = get_tree().root.find_node("Navigation",true,false)
 
+var health = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group('units')
 	move_to(Vector3(0,0,0))
 
 func _physics_process(delta):
+	if health < 1:
+		queue_free()
 	if pathindex < path.size():
 		var move_vec = (path[pathindex] - global_transform.origin)
 		if move_vec.length() < .1:

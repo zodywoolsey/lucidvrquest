@@ -23,6 +23,7 @@ var movement = Vector3()
 var gravityvec = Vector3()
 var gravity = 20
 var fullcontact = false
+var rotateflag = true
 
 var rloc
 var lloc
@@ -36,6 +37,7 @@ func _ready():
 	
 	
 func _process(delta):
+	# cam.rotation = Vector3(0,90,0)
 	rloc = right.get_node("HandArea/CollisionShape/MeshInstance").global_transform
 	lloc =  left.get_node( "HandArea/CollisionShape/MeshInstance").global_transform
 	hloc = get_node("player/ARVRCamera").global_transform
@@ -48,6 +50,7 @@ func _physics_process(delta):
 	ly =  left.get_joystick_axis(1)
 
 	var leftstickvector = Vector2(lx,ly)
+	var rightstickvector= Vector2(rx,ry)
 
 	direction = Vector3()
 
@@ -68,7 +71,13 @@ func _physics_process(delta):
 		leftstickvector.x = 0
 	if abs(leftstickvector.y) < deadzone:
 		leftstickvector.y = 0
-
+		
+	if abs(rightstickvector.x) < deadzone:
+		rightstickvector.x = 0
+	if abs(rightstickvector.y) < deadzone:
+		rightstickvector.y = 0
+	if abs(rightstickvector.x) < deadzone && abs(rightstickvector.y) < deadzone:
+		rotateflag = true
 	
 	leftstickvector = leftstickvector.normalized() * ((leftstickvector.length() - deadzone) / (1 - deadzone))
 	if leftstickvector.y > 0:
@@ -80,6 +89,17 @@ func _physics_process(delta):
 	elif leftstickvector.x < 0:
 		direction -= cam.global_transform.basis.x
 		
+	if rotateflag == true:
+		if rightstickvector.y > 0:
+			rotateflag = false
+		elif rightstickvector.y < 0:
+			rotateflag = false
+		if rightstickvector.x > 0:
+			rotate(Vector3.UP, deg2rad(-45))
+			rotateflag = false
+		elif rightstickvector.x < 0:
+			rotate(Vector3.UP, deg2rad(45))
+			rotateflag = false
 
 	direction = direction.normalized()
 	h_velocity = h_velocity.linear_interpolate(direction * speed, h_acceleration * delta)

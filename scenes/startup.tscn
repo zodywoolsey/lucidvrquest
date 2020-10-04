@@ -25,7 +25,7 @@ script = ExtResource( 3 )
 script = ExtResource( 1 )
 
 [node name="player" parent="startup" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.366064, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80585, 0 )
 
 [node name="RigidBody2" type="RigidBody" parent="startup" groups=[
 "grabbable",
