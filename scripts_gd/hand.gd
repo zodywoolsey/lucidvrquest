@@ -62,7 +62,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	handaudio.pulse_hz = 4+(5*((handBody.linear_velocity.length()+handBody.angular_velocity.length())/2))
+	# handaudio.pulse_hz = 4+(5*((handBody.linear_velocity.length()+handBody.angular_velocity.length())/2))
 	if grabDown:
 		grab()
 	if triggerDown && grabDown && !grabbed:
