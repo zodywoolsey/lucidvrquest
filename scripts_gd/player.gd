@@ -25,6 +25,8 @@ var gravity = 20
 var fullcontact = false
 var rotateflag = true
 
+
+
 var rloc
 var lloc
 var hloc
@@ -95,10 +97,18 @@ func _physics_process(delta):
 		elif rightstickvector.y < 0:
 			rotateflag = false
 		if rightstickvector.x > 0:
+			var tmporigin = cam.global_transform.origin
 			rotate(Vector3.UP, deg2rad(-45))
+			var tmpneworigin = cam.global_transform.origin
+			global_transform.origin += (tmporigin-tmpneworigin)
+			print(tmporigin)
+			print(tmpneworigin)
 			rotateflag = false
 		elif rightstickvector.x < 0:
+			var tmporigin = cam.global_transform.origin
 			rotate(Vector3.UP, deg2rad(45))
+			var tmpneworigin = cam.global_transform.origin
+			global_transform.origin += (tmporigin-tmpneworigin)
 			rotateflag = false
 
 	direction = direction.normalized()
@@ -110,5 +120,7 @@ func _physics_process(delta):
 	move_and_slide(movement, Vector3.UP)
 	
 	playerbody.global_transform.origin.x = cam.global_transform.origin.x
-	playerbody.global_transform.origin.z = cam.global_transform.origin.z
+	playerbody.global_transform.origin.x = cam.global_transform.origin.x
+	# playerorigin.global_transform.origin.z = cam.global_transform.origin.z
+	# playerorigin.global_transform.origin.z = cam.global_transform.origin.z
 

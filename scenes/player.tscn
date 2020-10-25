@@ -31,7 +31,9 @@ size = Vector3( 0.01, 5, 0.01 )
 flip_faces = true
 size = Vector3( 0.01, 5, 0.01 )
 
-[node name="rigidplayer" type="KinematicBody"]
+[node name="rigidplayer" type="KinematicBody" groups=[
+"mainbody",
+]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource( 4 )

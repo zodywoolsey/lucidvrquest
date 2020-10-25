@@ -19,6 +19,7 @@ points = PoolVector3Array( 0, 3, 0.001, 0.001, 3, 6.12303e-20, 1.22461e-19, 3, -
 
 [node name="enemy" type="KinematicBody" groups=[
 "character",
+"mainbody",
 ]]
 script = ExtResource( 1 )
 
