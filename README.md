@@ -1,2 +1,2 @@
 # dungeonGame
-A fun little dungeon game, made in godot.
+Deprecated precursor to PTB 
